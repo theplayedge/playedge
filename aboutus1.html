@@ -239,6 +239,68 @@
             background-color: rgb(255, 255, 255);
         }
 
+        /* Playful Attitude Section Styles */
+        .playful-attitude-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+            border-bottom: 2px solid #000;
+        }
+        
+        .logo-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+        
+        .logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 180px;
+            text-align: center;
+        }
+        
+        .logo-item img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        
+        .logo-caption {
+            font-family: var(--font-heading);
+            font-weight: bold;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+        
+        .playful-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+        }
+        
+        .content-with-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        
+        .playful-content {
+            flex: 1;
+            max-width: 600px;
+            padding: 0 50px;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
         .mobile-dropdown-link {
             display: block;
             padding: 0.5rem 1rem;
@@ -253,6 +315,27 @@
             border-left-color: var(--primary-color);
             padding-left: 1.25rem;
             background-color: rgba(250, 100, 101, 0.05);
+        }
+
+        /* Benefits Section */
+        .benefits-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .benefits-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
         }
 
         /* Mobile-specific adjustments */
@@ -308,6 +391,40 @@
             .stat-card:not(:last-child)::after {
                 display: none;
             }
+            
+            /* Playful attitude mobile adjustments */
+            .playful-attitude-section {
+                padding: 60px 0;
+            }
+            
+            .playful-title {
+                font-size: 2.2rem;
+            }
+            
+            .content-with-logos {
+                flex-direction: column;
+                margin: 30px 0;
+            }
+            
+            .playful-content {
+                padding: 0 20px;
+                font-size: 1.1rem;
+                margin: 30px 0;
+                order: -1;
+            }
+            
+            .logo-row {
+                gap: 30px;
+            }
+            
+            .logo-item img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo-caption {
+                font-size: 0.95rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -346,6 +463,24 @@
             .stat-card {
                 min-width: 100%;
                 max-width: 100%;
+            }
+            
+            /* Playful attitude mobile adjustments */
+            .playful-title {
+                font-size: 1.8rem;
+            }
+            
+            .logo-item {
+                max-width: 120px;
+            }
+            
+            .logo-item img {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo-caption {
+                font-size: 0.85rem;
             }
         }
 
@@ -514,18 +649,74 @@
         </div>
     </section>
 
-        <!-- Our Aim Section -->
-        <section class="section-container" style="background-color: #FA6465;">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <p class="quote" style="font-size: 2rem; font-weight: 600; line-height: 1.4; color: #ffffff;">
-                            “Our aim is to harness the power of play to develop a "Playful Attitude" in children to thrive today and create long term impact in the future.”
-                        </p>
-                    </div>
+    <!-- Our Aim Section -->
+    <section class="section-container" style="background-color: #FA6465;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p class="quote" style="font-size: 2rem; font-weight: 600; line-height: 1.4; color: #ffffff;">
+                        "Our aim is to harness the power of play to develop a "Playful Attitude" in children to thrive today and create long term impact in the future."
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Playful Attitude Section -->
+    <section class="playful-attitude-section">
+        <div class="container">
+            <!-- Top three logos -->
+            <div class="logo-row">
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/gZty1ZJ8/7.png" alt="Creativity and Problem solving">
+                    <div class="logo-caption">Creativity and Problem solving</div>
+                </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/PGhcQPDJ/3-2.png" alt="Openness & Ownership">
+                    <div class="logo-caption">Openness & Ownership</div>
+                </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/XxGgfTrv/8.png" alt="Positive outlook">
+                    <div class="logo-caption">Positive outlook</div>
+                </div>
+            </div>                  
+            
+            <!-- Content with left and right logos -->
+            <div class="content-with-logos">
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/B5KDYjnt/6.png" alt="Humor & Lightheartedness">
+                    <div class="logo-caption">Humor & Lightheartedness</div>
+                </div>
+                <div class="playful-content">
+                    <h2 class="playful-title">Core features of <p>'playful attitude'</h2>
+                    We define 'playful attitude' as a set of life skills,
+                    mindsets and dispositions. These are
+                    absolutely crucial in navigating the ups and
+                    downs of life with grace and to thrive.
+                </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/273tYjFL/9.png" alt="Inner strength">
+                    <div class="logo-caption">Inner strength</div>
+                </div>
+            </div>
+            
+            <!-- Bottom three logos -->
+            <div class="logo-row">
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/fdDw7m7C/10.png" alt="Adaptability">
+                    <div class="logo-caption">Adaptability</div>
+                </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/RpMdMDdv/4-1.png" alt="Win-win attitude">
+                    <div class="logo-caption">Win-win attitude</div>
+                </div>
+                <div class="logo-item">
+                    <img src="https://i.ibb.co/j99RqHrD/5.png" alt="Awareness & reflection">
+                    <div class="logo-caption">Awareness & reflection</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Benefits Section -->
     <section class="section-container">
@@ -540,7 +731,14 @@
                         downs of life with grace and thrive.
                     </p>
                     <p class="lead">We believe developing these fundamental skills
-                        will allow children to</p>
+                        will allow children to:</p>
+                    <ul class="benefits-list">
+                        <li>Develop critical thinking and problem-solving abilities</li>
+                        <li>Build emotional resilience and adaptability</li>
+                        <li>Enhance creativity and innovative thinking</li>
+                        <li>Improve social skills and collaboration</li>
+                        <li>Maintain mental wellbeing and joyfulness</li>
+                    </ul>
                 </div>
                 <div class="col-md-6 order-md-1 text-center ps-lg-3 pe-lg-3">
                     <img src="https://i.ibb.co/YBS0Mg2H/freepik-the-style-is-candid-image-photography-with-natural-93613.png"
