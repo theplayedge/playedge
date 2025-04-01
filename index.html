@@ -126,16 +126,78 @@
 
         .carousel-section {
             width: 100%;
+            position: relative;
         }
 
-        .carousel-control-prev,
-        .carousel-control-next {
+        /* Custom Arrow Styles */
+        .custom-carousel-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 10;
+            transform: translateY(-50%);
+        }
+
+        .custom-carousel-arrow {
+            pointer-events: all;
             width: 50px;
             height: 50px;
-            background: rgba(250, 100, 101, 0.8);
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 50%;
-            top: 50%;
-            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .custom-carousel-arrow i {
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        /* Hide default carousel controls */
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none !important;
+        }
+
+        /* Program Carousel Specific Styles */
+        .program-carousel {
+            max-width: 85%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .program-carousel .carousel-inner {
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        /* Smaller arrows for program carousel */
+        .program-carousel .custom-carousel-arrow {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .program-carousel .custom-carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .program-carousel .custom-carousel-arrow i {
+            color: #333;
+            font-size: 1.2rem;
         }
 
         .content-section {
@@ -287,16 +349,6 @@
             border-bottom: 2px solid #000;
         }
 
-        .program-carousel {
-            max-width: 85%;
-            margin: 0 auto;
-        }
-
-        .program-carousel .carousel-inner {
-            border-radius: 0px;
-            overflow: hidden;
-        }
-
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             .navbar-brand img {
@@ -349,6 +401,17 @@
             .workshops-section .row {
                 gap: 30px;
             }
+
+            /* Adjust carousel controls for mobile */
+            .custom-carousel-arrow {
+                width: 40px;
+                height: 40px;
+                margin: 0 10px;
+            }
+            
+            .custom-carousel-arrow i {
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -379,6 +442,17 @@
             
             .btn {
                 width: 100%;
+            }
+
+            /* Further adjust carousel controls for small screens */
+            .custom-carousel-arrow {
+                width: 35px;
+                height: 35px;
+                margin: 0 5px;
+            }
+
+            .custom-carousel-arrow i {
+                font-size: 1rem;
             }
         }
 
@@ -465,32 +539,33 @@
                 <div class="carousel-item active">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"
                         target="_blank">
-                        <img src="https://i.ibb.co/zhv3zTSk/COPYOF-3.png" class="d-block w-100" alt="Play Edge Program">
+                        <img src="https://i.ibb.co/gFzrmjMK/Copy-of-At-The-Play-Edge-Labs-we-believe-PLAY-is-how-we-learn-best-Research-shows-that-play-fuels-in.png" class="d-block w-100" alt="Play Edge Program">
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"
                         target="_blank">
-                        <img src="https://i.ibb.co/mChySj1y/COPYOF-1.png" class="d-block w-100"
+                        <img src="https://i.ibb.co/2DQzrQp/Copy-of-At-The-Play-Edge-Labs-we-believe-PLAY-is-how-we-learn-best-Research-shows-that-play-fuels-in.png" class="d-block w-100"
                             alt="Play Edge Activities">
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"
                         target="_blank">
-                        <img src="https://i.ibb.co/0y4SGPph/COPYOF-2.png" class="d-block w-100"
+                        <img src="https://i.ibb.co/kgNvRBbv/Copy-of-At-The-Play-Edge-Labs-we-believe-PLAY-is-how-we-learn-best-Research-shows-that-play-fuels-in.png" class="d-block w-100"
                             alt="Play Edge Learning">
                     </a>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <!-- Custom Arrows -->
+            <div class="custom-carousel-arrows">
+                <div class="custom-carousel-arrow prev" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <i class="bi bi-chevron-left"></i>
+                </div>
+                <div class="custom-carousel-arrow next" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -565,7 +640,7 @@
                             class="btn btn-success btn-lg">Start playing today!</a>
                     </div>
                 </div>
-                <div class="col-md-6 ps-lg-3 pe-lg-3">
+                <div class="col-md-6 ps-lg-3 pe-lg-3 position-relative">
                     <div id="carouselExample" class="carousel slide program-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="1500">
@@ -593,6 +668,15 @@
                                     and age groups. Though it is a year long
                                     program, you can typically sign-up for 1 month
                                     to 3 month long engagement at a time.</p>
+                            </div>
+                        </div>
+                        <!-- Custom Arrows -->
+                        <div class="custom-carousel-arrows">
+                            <div class="custom-carousel-arrow prev" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <i class="bi bi-chevron-left"></i>
+                            </div>
+                            <div class="custom-carousel-arrow next" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <i class="bi bi-chevron-right"></i>
                             </div>
                         </div>
                     </div>
@@ -706,7 +790,7 @@
                         <a href="gamesandkits.html" class="btn btn-primary btn-lg">Pre-book Now</a>
                     </div>
                 </div>
-                <div class="col-md-6 ps-lg-3 pe-lg-3">
+                <div class="col-md-6 ps-lg-3 pe-lg-3 position-relative">
                     <div id="carouselExample2" class="carousel slide program-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="1500">
@@ -724,6 +808,15 @@
                                 <p class="lead">These are our financial literacy focused games and activities. It will
                                     help in understanding personal finance terms and developing key skills and mindsets
                                     for long term wealth creation.</p>
+                            </div>
+                        </div>
+                        <!-- Custom Arrows -->
+                        <div class="custom-carousel-arrows">
+                            <div class="custom-carousel-arrow prev" data-bs-target="#carouselExample2" data-bs-slide="prev">
+                                <i class="bi bi-chevron-left"></i>
+                            </div>
+                            <div class="custom-carousel-arrow next" data-bs-target="#carouselExample2" data-bs-slide="next">
+                                <i class="bi bi-chevron-right"></i>
                             </div>
                         </div>
                     </div>
