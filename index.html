@@ -453,6 +453,20 @@
             overflow: hidden;
         }
 
+        /* Marquee styling */
+        marquee {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 0px 0;
+            font-weight: bold;
+            font-family: var(--font-heading);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1100;
+            border-bottom: 0px solid #eee;
+        }
+
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
 
@@ -607,6 +621,9 @@
 </head>
 
 <body>
+    <!-- Marquee at the top -->
+    <marquee style="color: black;">🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird discount.💯</marquee>
+
     <!-- Fixed Header Section -->
     <header class="navbar navbar-expand-lg fixed-top py-1">
         <div class="container">
@@ -841,7 +858,7 @@
                             style="height: 3px; width: 60px; background-color: var(--accent-color);"></div>
                         <p>Custom-designed games align with specific learning objectives, making complex topics engaging
                             and interactive. Through purposeful game mechanics, players develop targeted skills in an
-                            immersive and enjoyable way.</p>
+                            immersive and enjoyable way.</p>
                     </div>
                 </div>
             </div>
