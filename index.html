@@ -29,7 +29,24 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            padding-top: 80px;
+            padding-top: 10px; /* Increased to accommodate marquee */
+        }
+
+        /* Marquee styles */
+        .marquee-container {
+            background-color: #FFD200; /* Yellow background */
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1100; /* Above navbar */
+            padding: 5px 0;
+        }
+        
+        .marquee {
+            font-size: 16px;
+            color: #000; /* Black text */
+            font-weight: normal;
+            white-space: nowrap;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -43,14 +60,14 @@
             min-height: 80px;
             padding: 0.5rem 0;
             position: sticky;
-            top: 0;
+            top: 35px; /* Adjusted for marquee */
             z-index: 1000;
             background-color: white;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
         }
 
         .navbar-brand img {
-            width: 130px;
+            width: 120px;
             height: auto;
             transition: transform 0.3s ease;
         }
@@ -269,7 +286,7 @@
         }
 
         .btn-danger:hover {
-            background-color: #e6bd00;
+            background-color: #FFD200;
         }
 
         .workshop-item {
@@ -356,11 +373,15 @@
             }
 
             body {
-                padding-top: 70px;
+                padding-top: 100px;
+            }
+
+            .marquee {
+                font-size: 14px;
             }
 
             .img-lg {
-                max-width: 300px;
+                max-width: 350px;
             }
 
             .gallery-item {
@@ -369,7 +390,8 @@
             }
 
             header.navbar {
-                min-height: 70px;
+                min-height: 100px;
+                top: 25px;
             }
 
             .content-section,
@@ -419,13 +441,21 @@
                 width: 80px !important;
             }
 
+            body {
+                padding-top: 20px;
+            }
+
+            .marquee {
+                font-size: 12px;
+            }
+
             .gallery-item {
                 width: 130px;
                 height: 170px;
             }
 
-            body {
-                padding-top: 60px;
+            header.navbar {
+                top: 20px;
             }
 
             .content-section,
@@ -477,6 +507,13 @@
 </head>
 
 <body>
+    <!-- Marquee Banner -->
+    <div class="marquee-container">
+        <marquee class="marquee" direction="left">
+            🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird discount.
+        </marquee>
+    </div>
+
     <!-- Fixed Header Section -->
     <header class="navbar navbar-expand-lg fixed-top py-1">
         <div class="container">
