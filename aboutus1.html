@@ -7,7 +7,8 @@
     <title>The Play Edge - Key Sections</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Intro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Intro&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary-color: #FA6465;
@@ -49,7 +50,12 @@
             white-space: nowrap;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-heading);
             font-weight: bold;
             line-height: 1.3;
@@ -169,13 +175,52 @@
         /* Carousel styles */
         .carousel-section {
             margin-top: 0px;
+            position: relative;
         }
-        
+
         .carousel-item img {
             width: 100%;
             height: auto;
             max-height: 600px;
             object-fit: cover;
+        }
+
+        /* Our Story Box */
+        .our-story-box {
+            position: absolute;
+            top: 60%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(250, 100, 101, 0.9);
+            /* Fixed the color syntax and used your primary color */
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 450px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 2px solid var(--primary-color);
+        }
+
+        .our-story-box h2 {
+            color: white;
+            /* Changed to white */
+            font-size: 38px;
+            margin-bottom: 15px;
+            font-family: var(--font-heading);
+            font-weight: bold;
+            /* Added bold */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            /* Optional: adds slight shadow for better readability */
+        }
+
+        .our-story-box p {
+            color: white;
+            /* Changed to white */
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.5;
+            font-weight: bold;
+            /* Added bold */
         }
 
         /* Statistics Section Styles */
@@ -184,14 +229,14 @@
             padding: 60px 0;
             border-bottom: 2px solid #000;
         }
-        
+
         .stats-title {
             text-align: center;
             margin-bottom: 40px;
             font-family: var(--font-heading);
             color: var(--dark-color);
         }
-        
+
         .stats-grid {
             display: flex;
             justify-content: center;
@@ -200,7 +245,7 @@
             gap: 30px;
             padding: 0 20px;
         }
-        
+
         .stat-card {
             flex: 1;
             min-width: 300px;
@@ -211,7 +256,7 @@
             align-items: center;
             position: relative;
         }
-        
+
         .stat-percentage {
             font-size: 3.5rem;
             font-weight: bold;
@@ -220,7 +265,7 @@
             font-family: var(--font-heading);
             line-height: 1;
         }
-        
+
         .stat-description {
             color: #555;
             line-height: 1.6;
@@ -245,7 +290,7 @@
             background-color: #f9f9f9;
             border-bottom: 2px solid #000;
         }
-        
+
         .logo-row {
             display: flex;
             justify-content: center;
@@ -253,7 +298,7 @@
             flex-wrap: wrap;
             gap: 60px;
         }
-        
+
         .logo-item {
             display: flex;
             flex-direction: column;
@@ -261,14 +306,14 @@
             max-width: 180px;
             text-align: center;
         }
-        
+
         .logo-item img {
             width: 140px;
             height: 140px;
             object-fit: contain;
             margin-bottom: 20px;
         }
-        
+
         .logo-caption {
             font-family: var(--font-heading);
             font-weight: bold;
@@ -277,21 +322,21 @@
             margin-top: 15px;
             line-height: 1.4;
         }
-        
+
         .playful-title {
             text-align: center;
             font-size: 2.8rem;
             margin-bottom: 50px;
             color: var(--dark-color);
         }
-        
+
         .content-with-logos {
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 50px 0;
         }
-        
+
         .playful-content {
             flex: 1;
             max-width: 600px;
@@ -322,14 +367,14 @@
             list-style-type: none;
             padding-left: 0;
         }
-        
+
         .benefits-list li {
             position: relative;
             padding-left: 30px;
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
-        
+
         .benefits-list li:before {
             content: "✓";
             position: absolute;
@@ -370,19 +415,19 @@
                 flex-direction: column;
                 gap: 15px;
             }
-            
+
             .carousel-section {
                 margin-top: 100px;
             }
-            
+
             .stats-section {
                 padding: 40px 0;
             }
-            
+
             .stat-percentage {
                 font-size: 2.8rem;
             }
-            
+
             .stat-card {
                 min-width: 250px;
             }
@@ -391,37 +436,47 @@
             .stat-card:not(:last-child)::after {
                 display: none;
             }
-            
+
+            /* Our Story Box mobile */
+            .our-story-box {
+                max-width: 280px;
+                padding: 15px;
+            }
+
+            .our-story-box h2 {
+                font-size: 22px;
+            }
+
             /* Playful attitude mobile adjustments */
             .playful-attitude-section {
                 padding: 60px 0;
             }
-            
+
             .playful-title {
                 font-size: 2.2rem;
             }
-            
+
             .content-with-logos {
                 flex-direction: column;
                 margin: 30px 0;
             }
-            
+
             .playful-content {
                 padding: 0 20px;
                 font-size: 1.1rem;
                 margin: 30px 0;
                 order: -1;
             }
-            
+
             .logo-row {
                 gap: 30px;
             }
-            
+
             .logo-item img {
                 width: 100px;
                 height: 100px;
             }
-            
+
             .logo-caption {
                 font-size: 0.95rem;
             }
@@ -451,34 +506,49 @@
             .section-img.img-lg {
                 max-width: 100%;
             }
-            
+
             .carousel-section {
                 margin-top: 0px;
             }
-            
+
             .stats-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .stat-card {
                 min-width: 100%;
                 max-width: 100%;
             }
-            
+
+            /* Our Story Box mobile */
+            .our-story-box {
+                max-width: 220px;
+                padding: 12px;
+            }
+
+            .our-story-box h2 {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+
+            .our-story-box p {
+                font-size: 14px;
+            }
+
             /* Playful attitude mobile adjustments */
             .playful-title {
                 font-size: 1.8rem;
             }
-            
+
             .logo-item {
                 max-width: 120px;
             }
-            
+
             .logo-item img {
                 width: 80px;
                 height: 80px;
             }
-            
+
             .logo-caption {
                 font-size: 0.85rem;
             }
@@ -508,7 +578,8 @@
     <!-- Marquee Banner -->
     <div class="marquee-container">
         <marquee class="marquee" direction="left">
-            🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird discount.
+            🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird
+            discount.
         </marquee>
     </div>
 
@@ -574,7 +645,11 @@
                 <div class="carousel-item active">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"
                         target="_blank">
-                        <img src="https://i.ibb.co/rR6rpNSS/freepik-three-indian-kids-with-an-average-age-of-20-colleg-25731.png" class="d-block w-100" alt="Play Edge Program">
+                        <img src="https://i.ibb.co/rR6rpNSS/freepik-three-indian-kids-with-an-average-age-of-20-colleg-25731.png"
+                            class="d-block w-100" alt="Play Edge Program">
+                        <div class="our-story-box">
+                            <h2>OUR STORY</h2>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -595,8 +670,8 @@
                     </p>
                 </div>
                 <div class="col-md-6 text-center ps-lg-3 pe-lg-3">
-                    <img src="https://i.ibb.co/Hfw3NCmx/triangle-our-story.png"
-                        alt="Children playing" class="section-img img-lg">
+                    <img src="https://i.ibb.co/Hfw3NCmx/triangle-our-story.png" alt="Children playing"
+                        class="section-img img-lg">
                 </div>
             </div>
         </div>
@@ -608,17 +683,21 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-percentage">51%</div>
-                    <p class="stat-description">Graduates are unemployable. Core skills required are problem solving, communication and adaptability which are missing.</p>
+                    <p class="stat-description">Graduates are unemployable. Core skills required are problem solving,
+                        communication and adaptability which are missing.</p>
                 </div>
-                
+
                 <div class="stat-card">
                     <div class="stat-percentage">25%</div>
-                    <p class="stat-description">Jobs will be affected in the form of new job creation or destruction of old jobs. This is from 2025-30. Most of the school going children will join workforce after 10 years.</p>
+                    <p class="stat-description">Jobs will be affected in the form of new job creation or destruction of
+                        old jobs. This is from 2025-30. Most of the school going children will join workforce after 10
+                        years.</p>
                 </div>
-                
+
                 <div class="stat-card">
                     <div class="stat-percentage">23%</div>
-                    <p class="stat-description">Children in school have a mental health issue in any given year. The number dramatically increases if incidents of extreme emotions are considered.</p>
+                    <p class="stat-description">Children in school have a mental health issue in any given year. The
+                        number dramatically increases if incidents of extreme emotions are considered.</p>
                 </div>
             </div>
         </div>
@@ -655,7 +734,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <p class="quote" style="font-size: 2rem; font-weight: 600; line-height: 1.4; color: #ffffff;">
-                        "Our aim is to harness the power of play to develop a "Playful Attitude" in children to thrive today and create long term impact in the future."
+                        "Our aim is to harness the power of play to develop a "Playful Attitude" in children to thrive
+                        today and create long term impact in the future."
                     </p>
                 </div>
             </div>
@@ -679,8 +759,8 @@
                     <img src="https://i.ibb.co/XxGgfTrv/8.png" alt="Positive outlook">
                     <div class="logo-caption">Positive outlook</div>
                 </div>
-            </div>                  
-            
+            </div>
+
             <!-- Content with left and right logos -->
             <div class="content-with-logos">
                 <div class="logo-item">
@@ -699,7 +779,7 @@
                     <div class="logo-caption">Inner strength</div>
                 </div>
             </div>
-            
+
             <!-- Bottom three logos -->
             <div class="logo-row">
                 <div class="logo-item">
@@ -788,4 +868,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
