@@ -30,7 +30,6 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            padding-top: 10px;
         }
 
         /* Marquee styles */
@@ -149,7 +148,6 @@
 
         .section-container {
             padding: 80px 0;
-            border-bottom: px solid #5d5858;
         }
 
         .section-img {
@@ -174,8 +172,8 @@
 
         /* Carousel styles */
         .carousel-section {
-            margin-top: 0px;
             position: relative;
+            margin-top: 35px;
         }
 
         .carousel-item img {
@@ -185,12 +183,10 @@
             object-fit: cover;
         }
 
-
         /* Statistics Section Styles */
         .stats-section {
             background-color: #FFD200;
             padding: 60px 0;
-            border-bottom: 0px solid #000;
         }
 
         .stats-title {
@@ -227,6 +223,7 @@
             margin-bottom: 15px;
             font-family: var(--font-heading);
             line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .stat-description {
@@ -259,37 +256,41 @@
             justify-content: center;
             margin-bottom: 30px;
             flex-wrap: wrap;
-            gap: 190px;
+            gap: 30px;
         }
 
         .logo-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 2000px;
+            max-width: 200px;
             text-align: center;
         }
 
         .logo-item img {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             object-fit: contain;
             margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-item img:hover {
+            transform: scale(1.1);
         }
 
         .logo-caption {
             font-family: var(--font-heading);
             font-weight: bold;
             color: var(--dark-color);
-            font-size: 1.4rem;
-            margin-top: px;
+            font-size: 1.2rem;
             line-height: 1.4;
         }
 
         .playful-title {
             text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
             color: var(--dark-color);
         }
 
@@ -297,16 +298,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 10px 0;
+            margin: 40px 0;
+            flex-wrap: wrap;
         }
 
         .playful-content {
             flex: 1;
+            min-width: 300px;
             max-width: 600px;
-            padding: 0 50px;
-            font-size: 1.3rem;
+            padding: 0 30px;
+            font-size: 1.2rem;
             line-height: 1.8;
             text-align: center;
+            margin: 20px 0;
         }
 
         .mobile-dropdown-link {
@@ -346,179 +350,29 @@
             font-weight: bold;
         }
 
+        /* Quote Section */
+        .quote-section {
+            background-color: #FA6465;
+            padding: 80px 0;
+        }
+
+        .quote {
+            font-size: 2.5rem;
+            font-weight: 100;
+            line-height: 1.5;
+            color: #ffffff;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         /* Mobile-specific adjustments */
-        @media (max-width: 768px) {
-            .navbar-brand img {
-                width: 100px !important;
-            }
-
+        @media (max-width: 992px) {
             body {
-                padding-top: 100px;
+                padding-top: 120px;
             }
 
-            .marquee {
-                font-size: 14px;
-            }
-
-            .img-lg {
-                max-width: 350px;
-            }
-
-            header.navbar {
-                min-height: 100px;
-                top: 25px;
-            }
-
-            .section-container {
-                padding: 60px 20px;
-            }
-
-            .btn-container {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .carousel-section {
-                margin-top: 100px;
-            }
-
-            .stats-section {
-                padding: 40px 0;
-            }
-
-            .stat-percentage {
-                font-size: 2.8rem;
-            }
-
-            .stat-card {
-                min-width: 250px;
-            }
-
-            /* Remove dividers on mobile */
-            .stat-card:not(:last-child)::after {
-                display: none;
-            }
-
-            /* Our Story Box mobile */
-            .our-story-box {
-                max-width: 280px;
-                padding: 15px;
-                margin-left: 5%;
-            }
-
-            .our-story-box h2 {
-                font-size: 22px;
-            }
-
-            /* Playful attitude mobile adjustments */
-            .playful-attitude-section {
-                padding: 60px 0;
-            }
-
-            .playful-title {
-                font-size: 2.2rem;
-            }
-
-            .content-with-logos {
-                flex-direction: column;
-                margin: 30px 0;
-            }
-
-            .playful-content {
-                padding: 0 20px;
-                font-size: 1.1rem;
-                margin: 30px 0;
-                order: -1;
-            }
-
-            .logo-row {
-                gap: 40px;
-            }
-
-            .logo-item img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .logo-caption {
-                font-size: 0.95rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .navbar-brand img {
-                width: 80px !important;
-            }
-
-            body {
-                padding-top: 20px;
-            }
-
-            .marquee {
-                font-size: 12px;
-            }
-
-            header.navbar {
-                top: 20px;
-            }
-
-            .section-container {
-                padding: 40px 15px;
-            }
-
-            .section-img.img-lg {
-                max-width: 100%;
-            }
-
-            .carousel-section {
-                margin-top: 0px;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-card {
-                min-width: 100%;
-                max-width: 100%;
-            }
-
-            /* Our Story Box mobile */
-            .our-story-box {
-                max-width: 220px;
-                padding: 12px;
-            }
-
-            .our-story-box h2 {
-                font-size: 18px;
-                margin-bottom: 8px;
-            }
-
-            .our-story-box p {
-                font-size: 14px;
-            }
-
-            /* Playful attitude mobile adjustments */
-            .playful-title {
-                font-size: 1.8rem;
-            }
-
-            .logo-item {
-                max-width: 120px;
-            }
-
-            .logo-item img {
-                width: 80px;
-                height: 80px;
-            }
-
-            .logo-caption {
-                font-size: 0.85rem;
-            }
-        }
-
-        @media (max-width: 991.98px) {
             .navbar-collapse {
                 padding: 0.5rem 0;
                 background: white;
@@ -533,6 +387,187 @@
             .mobile-dropdown-links {
                 padding-left: 1.5rem;
                 margin-top: 0.25rem;
+            }
+
+            .carousel-section {
+                margin-top: 0;
+            }
+
+            .section-container {
+                padding: 60px 20px !important;
+            }
+
+            .section-container .row {
+                flex-direction: column;
+            }
+
+            .section-container .col-md-6 {
+                order: 0;
+                padding: 0 15px !important;
+                margin-bottom: 30px;
+            }
+
+            .section-container h1 {
+                text-align: center;
+                font-size: 2rem;
+            }
+
+            .section-container .lead {
+                text-align: center;
+            }
+
+            .img-lg {
+                max-width: 100%;
+            }
+
+            .stats-section {
+                padding: 40px 0;
+            }
+
+            .stat-card {
+                min-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .stat-card:not(:last-child)::after {
+                display: none;
+            }
+
+            .stat-percentage {
+                font-size: 3.5rem;
+            }
+
+            .playful-attitude-section {
+                padding: 60px 0;
+            }
+
+            .playful-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
+            .logo-item img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .logo-caption {
+                font-size: 1rem;
+            }
+
+            .playful-content {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+
+            .quote {
+                font-size: 1.8rem;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 100px;
+            }
+
+            .marquee {
+                font-size: 14px;
+            }
+
+            header.navbar {
+                min-height: 70px;
+                top: 25px;
+            }
+
+            .navbar-brand img {
+                width: 100px !important;
+            }
+
+            .logo-row {
+                gap: 20px;
+            }
+
+            .logo-item {
+                max-width: 150px;
+            }
+
+            .logo-item img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .content-with-logos {
+                flex-direction: column;
+            }
+
+            .quote {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 30px;
+            }
+
+            .marquee {
+                font-size: 12px;
+            }
+
+            header.navbar {
+                min-height: 60px;
+                top: 30px;
+            }
+
+            .navbar-brand img {
+                width: 80px !important;
+            }
+
+            .section-container {
+                padding: 40px 15px !important;
+            }
+
+            .stat-percentage {
+                font-size: 3rem;
+            }
+
+            .playful-title {
+                font-size: 1.8rem;
+            }
+
+            .logo-row {
+                gap: 15px;
+            }
+
+            .logo-item {
+                max-width: 120px;
+            }
+
+            .logo-item img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .logo-caption {
+                font-size: 0.9rem;
+            }
+
+            .quote {
+                font-size: 1.3rem;
+            }
+
+            footer .row {
+                flex-direction: column;
+                text-align: center !important;
+            }
+
+            footer .col-md-4 {
+                margin-bottom: 20px;
+            }
+
+            footer .d-flex {
+                justify-content: center !important;
             }
         }
     </style>
@@ -617,25 +652,26 @@
         </div>
     </section>
 
-    <section class="section-container" style="margin-left: 100px;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 ps-lg-4 pe-lg-4">
-                    <h1>THE PROBLEM</h1>
-                    <p class="lead">
-                        As we face a more uncertain world the
-                        skills taught in schools are not enough
-                        and in some cases will become
-                        irrelevant in the future.
-                    </p>
-                </div>
-                <div class="col-md-6 text-center ps-lg-3 pe-lg-3">
-                    <img src="https://i.ibb.co/Hfw3NCmx/triangle-our-story.png" alt="Children playing"
-                        class="section-img img-lg">
-                </div>
+<!-- Problem Section -->
+<section class="section-container">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 ps-lg-5 pe-lg-5 offset-md-1">  <!-- Added offset-md-1 and adjusted padding -->
+                <h1>THE PROBLEM</h1>
+                <p class="lead">
+                    As we face a more uncertain world the
+                    skills taught in schools are not enough
+                    and in some cases will become
+                    irrelevant in the future.
+                </p>
+            </div>
+            <div class="col-md-5 text-center ps-lg-3 pe-lg-3">  <!-- Changed to col-md-5 -->
+                <img src="https://i.ibb.co/Hfw3NCmx/triangle-our-story.png" alt="Children playing"
+                    class="section-img img-lg">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Statistics Section -->
     <section class="stats-section">
@@ -663,7 +699,7 @@
         </div>
     </section>
 
-    <!-- Why We Exist Section -->
+    <!-- Solution Section -->
     <section class="section-container">
         <div class="container">
             <div class="row align-items-center">
@@ -688,19 +724,19 @@
         </div>
     </section>
 
-<!-- Our Aim Section -->
-<section class="section-container" style="background-color: #FA6465; padding: 80px 0;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <p class="quote" style="font-size: 42px; font-weight: 100; line-height: 1.6; color: #ffffff; margin: 0 auto; max-width: 1000px;">
-                    "Our aim is to harness the power of play to develop a 'Playful Attitude' in children to thrive 
-                    today and create long term impact in the future."
-                </p>
+    <!-- Our Aim Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <p class="quote">
+                        "Our aim is to harness the power of play to develop a 'Playful Attitude' in children to thrive
+                        today and create long term impact in the future."
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Playful Attitude Section -->
     <section class="playful-attitude-section">
@@ -709,11 +745,11 @@
             <div class="logo-row">
                 <div class="logo-item">
                     <img src="https://i.ibb.co/gZty1ZJ8/7.png" alt="Creativity and Problem solving">
-                    <div class="logo-caption">Creativity and<p> Problem solving</div>
+                    <div class="logo-caption">Creativity and Problem solving</div>
                 </div>
                 <div class="logo-item">
                     <img src="https://i.ibb.co/PGhcQPDJ/3-2.png" alt="Openness & Ownership">
-                    <div class="logo-caption">Openness &<p> Ownership</div>
+                    <div class="logo-caption">Openness & Ownership</div>
                 </div>
                 <div class="logo-item">
                     <img src="https://i.ibb.co/XxGgfTrv/8.png" alt="Positive outlook">
@@ -725,10 +761,10 @@
             <div class="content-with-logos">
                 <div class="logo-item">
                     <img src="https://i.ibb.co/B5KDYjnt/6.png" alt="Humor & Lightheartedness">
-                    <div class="logo-caption">Humor &<p> Lightheartedness</div>
+                    <div class="logo-caption">Humor & Lightheartedness</div>
                 </div>
                 <div class="playful-content">
-                    <h2 class="playful-title">Core features of <p>'playful attitude'</h2>
+                    <h2 class="playful-title">Core features of 'playful attitude'</h2>
                     We define 'playful attitude' as a set of life skills,
                     mindsets and dispositions. These are
                     absolutely crucial in navigating the ups and
@@ -752,7 +788,7 @@
                 </div>
                 <div class="logo-item">
                     <img src="https://i.ibb.co/j99RqHrD/5.png" alt="Awareness & reflection">
-                    <div class="logo-caption">Awareness &<p> reflection</div>
+                    <div class="logo-caption">Awareness & reflection</div>
                 </div>
             </div>
         </div>
