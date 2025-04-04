@@ -7,7 +7,8 @@
     <title>The Play Edge</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Intro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Intro&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary-color: #FA6465;
@@ -29,27 +30,36 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            padding-top: 10px; /* Increased to accommodate marquee */
+            padding-top: 10px;
+            /* Increased to accommodate marquee */
         }
 
         /* Marquee styles */
         .marquee-container {
-            background-color: #FFD200; /* Yellow background */
+            background-color: #FFD200;
+            /* Yellow background */
             width: 100%;
             position: fixed;
             top: 0;
-            z-index: 1100; /* Above navbar */
+            z-index: 1100;
+            /* Above navbar */
             padding: 5px 0;
         }
-        
+
         .marquee {
             font-size: 16px;
-            color: #000; /* Black text */
+            color: #000;
+            /* Black text */
             font-weight: normal;
             white-space: nowrap;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-heading);
             font-weight: bold;
             line-height: 1.3;
@@ -60,7 +70,8 @@
             min-height: 80px;
             padding: 0.5rem 0;
             position: sticky;
-            top: 35px; /* Adjusted for marquee */
+            top: 35px;
+            /* Adjusted for marquee */
             z-index: 1000;
             background-color: white;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
@@ -191,7 +202,7 @@
         /* Program Carousel Specific Styles */
         .program-carousel {
             max-width: 85%;
-            margin:  auto;
+            margin: auto;
             position: relative;
         }
 
@@ -367,6 +378,11 @@
             border-bottom: 1px solid #cdcdcd;
         }
 
+        /* Added spacing for carousel headings */
+        .program-carousel h2 {
+            margin-top: 20px;
+        }
+
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             .navbar-brand img {
@@ -405,22 +421,22 @@
             .content-section .text-start {
                 text-align: center !important;
             }
-            
+
             /* New mobile spacing additions */
             .content-section .row {
                 gap: 30px;
             }
-            
+
             .section-img.img-lg {
                 margin-bottom: 20px;
             }
-            
+
             .btn-container {
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
             }
-            
+
             .workshops-section .row {
                 gap: 30px;
             }
@@ -431,7 +447,7 @@
                 height: 40px;
                 margin: 0 10px;
             }
-            
+
             .custom-carousel-arrow i {
                 font-size: 1.2rem;
             }
@@ -465,12 +481,12 @@
             .workshops-section {
                 padding: 40px 15px;
             }
-            
+
             /* New small mobile additions */
             .section-img.img-lg {
                 max-width: 100%;
             }
-            
+
             .btn {
                 width: 100%;
             }
@@ -511,7 +527,8 @@
     <!-- Marquee Banner -->
     <div class="marquee-container">
         <marquee class="marquee" direction="left">
-            🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird discount.
+            🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird
+            discount.
         </marquee>
     </div>
 
@@ -534,14 +551,14 @@
                             data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
                         <a class="nav-link d-lg-none" href="aboutus1.html">About Us</a>
                         <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="aboutus1.html">Our Story</a></li>
-                            <li><a class="dropdown-item" href="aboutus2.html">Philosophy and Approach</a></li>
-                            <li><a class="dropdown-item" href="aboutus3.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="Our Story.html">Our Story</a></li>
+                            <li><a class="dropdown-item" href="Philosophy and Approach.html">Philosophy and Approach</a></li>
+                            <li><a class="dropdown-item" href="Our Team.html">Our Team</a></li>
                         </ul>
                         <div class="d-lg-none mobile-dropdown-links">
-                            <a href="aboutus1.html" class="mobile-dropdown-link">Our Story</a>
-                            <a href="aboutus2.html" class="mobile-dropdown-link">Philosophy and Approach</a>
-                            <a href="aboutus3.html" class="mobile-dropdown-link">Our Team</a>
+                            <a href="Our Story.html" class="mobile-dropdown-link">Our Story</a>
+                            <a href="Philosophy and Approach.html" class="mobile-dropdown-link">Philosophy and Approach</a>
+                            <a href="Our Team.html" class="mobile-dropdown-link">Our Team</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -549,21 +566,21 @@
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">Program</a>
                         <a class="nav-link d-lg-none" href="program-1.html">Program</a>
                         <ul class="dropdown-menu" aria-labelledby="programDropdown">
-                            <li><a class="dropdown-item" href="program1.html">Future Leader Program</a></li>
-                            <li><a class="dropdown-item" href="program2.html">STEAM program</a></li>
-                            <li><a class="dropdown-item" href="program3.html">Full Day Workshops</a></li>
+                            <li><a class="dropdown-item" href="Future Leader Program.html">Future Leader Program</a></li>
+                            <li><a class="dropdown-item" href="STEAM program.html">STEAM program</a></li>
+                            <li><a class="dropdown-item" href="Full Day Workshops.html">Full Day Workshops</a></li>
                         </ul>
                         <div class="d-lg-none mobile-dropdown-links">
-                            <a href="program1.html" class="mobile-dropdown-link">Future Leader Program</a>
-                            <a href="program2.html" class="mobile-dropdown-link">STEAM program</a>
-                            <a href="program3.html" class="mobile-dropdown-link">Full Day Workshops</a>
+                            <a href="Future Leader Program.html" class="mobile-dropdown-link">Future Leader Program</a>
+                            <a href="STEAM program.html" class="mobile-dropdown-link">STEAM program</a>
+                            <a href="Full Day Workshops.html" class="mobile-dropdown-link">Full Day Workshops</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gamesandkits.html">Games And Kit</a>
+                        <a class="nav-link" href="Games And Kit.html">Games And Kit</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                        <a class="nav-link" href="Blog.html">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -583,15 +600,13 @@
                 <div class="carousel-item">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"
                         target="_blank">
-                        <img src="boot2.png" class="d-block w-100"
-                            alt="Play Edge Activities">
+                        <img src="boot2.png" class="d-block w-100" alt="Play Edge Activities">
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"
                         target="_blank">
-                        <img src="boot3.png" class="d-block w-100"
-                            alt="Play Edge Learning">
+                        <img src="boot3.png" class="d-block w-100" alt="Play Edge Learning">
                     </a>
                 </div>
             </div>
@@ -672,32 +687,20 @@
                         free play, guided play, and custom games.</p>
                     <p class="lead">Each of our programs is designed to ultimately help children thrive and produce
                         massive outcomes in the long term.</p>
-                        <div class="btn-container d-flex flex-column gap-3">
-                            <a href="program1.html" class="btn btn-primary btn-lg">Know more</a>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform" 
-                               class="btn btn-success btn-lg">Start playing today!</a>
-                        </div>
+                    <div class="btn-container d-flex flex-column gap-3">
+                        <a href="program1.html" class="btn btn-primary btn-lg">Know more</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"
+                            class="btn btn-success btn-lg">Start playing today!</a>
+                    </div>
                 </div>
                 <div class="col-md-6 ps-lg-3 pe-lg-3 position-relative">
                     <div id="carouselExample" class="carousel slide program-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="3000">
-                                <img src="https://i.ibb.co/tpCGF9J5/freepik-the-style-is-candid-image-photography-with-natural-53402.png"
-                                    alt="Workshop image" style="border-radius: 12px; display: block; width: 100%;">
-                                    <h2>1. Full day Workshops</h2>
-                                <p class="lead">These are 4-6 hr workshops on a single day.
-                                    These workshops are meant to fun
-                                    experiences for children to start their journey to
-                                    learn new topics. These will be on different
-                                    topics each time. Some examples could be
-                                    Architecture, Design, Design thinking, Financial
-                                    literacy etc.</p>
-                            </div>
                             <div class="carousel-item" data-bs-interval="3000">
                                 <img src="https://i.ibb.co/5h5KrthR/freepik-the-style-is-candid-image-photography-with-natural-93615.jpg"
                                     alt="Future Leader Program"
                                     style="border-radius: 12px; display: block; width: 100%;">
-                                    <h2>2. Future Leader Program</h2>
+                                <h2>1. Future Leader Program</h2>
                                 <p class="lead">This is our in depth year long program to
                                     develop leadership skills and mindsets. Weekly
                                     2 hr engagement in the form of one session
@@ -707,13 +710,39 @@
                                     program, you can typically sign-up for 1 month
                                     to 3 month long engagement at a time.</p>
                             </div>
+                            <div class="carousel-item active" data-bs-interval="3000">
+                                <img src="steam.png" alt="Workshop image"
+                                    style="border-radius: 12px; display: block; width: 100%;">
+                                <h2>2. STEAM Program</h2>
+                                <p class="lead">These are 4-6 hr workshops on a single day.
+                                    These workshops are meant to fun
+                                    experiences for children to start their journey to
+                                    learn new topics. These will be on different
+                                    topics each time. Some examples could be
+                                    Architecture, Design, Design thinking, Financial
+                                    literacy etc.</p>
+                            </div>
+                            <div class="carousel-item active" data-bs-interval="3000">
+                                <img src="https://i.ibb.co/tpCGF9J5/freepik-the-style-is-candid-image-photography-with-natural-53402.png"
+                                    alt="Workshop image" style="border-radius: 12px; display: block; width: 100%;">
+                                <h2>3. Full day Workshops</h2>
+                                <p class="lead">These are 4-6 hr workshops on a single day.
+                                    These workshops are meant to fun
+                                    experiences for children to start their journey to
+                                    learn new topics. These will be on different
+                                    topics each time. Some examples could be
+                                    Architecture, Design, Design thinking, Financial
+                                    literacy etc.</p>
+                            </div>
                         </div>
                         <!-- Custom Arrows -->
                         <div class="custom-carousel-arrows">
-                            <div class="custom-carousel-arrow prev" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <div class="custom-carousel-arrow prev" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
                                 <i class="bi bi-chevron-left"></i>
                             </div>
-                            <div class="custom-carousel-arrow next" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <div class="custom-carousel-arrow next" data-bs-target="#carouselExample"
+                                data-bs-slide="next">
                                 <i class="bi bi-chevron-right"></i>
                             </div>
                         </div>
@@ -722,61 +751,61 @@
             </div>
         </div>
     </section>
-<!-- ===== CORE PRINCIPLES SECTION ===== -->
-<section class="content-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1>OUR CORE PLAY PRINCIPLES</h1>
+    <!-- ===== CORE PRINCIPLES SECTION ===== -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>OUR CORE PLAY PRINCIPLES</h1>
+                </div>
+            </div>
+
+            <div class="row mt-">
+                <!-- Principle 1 -->
+                <div class="col-md-4 mb-3 mb-md-0 px-lg-4 px-3"> <!-- Adjusted padding -->
+                    <div class="text-center">
+                        <h4>Free Play</h4>
+                        <img src="https://i.ibb.co/vvd3GhQb/3-1-1.png" alt="Creativity Icon" class="img-fluid mb-3"
+                            style="max-height: 130px; width: auto;">
+                    </div>
+                    <div class="mb-3" style="height: 3px; width: 60px;"></div>
+                    <p class="lead">Free play allows participants to explore, experiment, and create freely with peers
+                        without
+                        rigid rules. It fosters creativity, problem-solving, and intrinsic motivation by letting
+                        players take the lead in their learning journey.
+                    </p>
+                </div>
+
+                <!-- Principle 2 -->
+                <div class="col-md-4 mb-4 mb-md-0 px-lg-4 px-3 my-md-0 my-3"> <!-- Added vertical margin -->
+                    <div class="text-center">
+                        <h4>Guided Play</h4>
+                        <img src="https://i.ibb.co/BVwQJKR5/3-1-3.png" alt="Learning Icon" class="img-fluid mb-3"
+                            style="max-height: 130px; width: auto;">
+                    </div>
+                    <div class="mb-3" style="height: 3px; width: 60px;"></div>
+                    <p class="lead">Guided play blends freedom with structure, using prompts or challenges to steer
+                        learning
+                        while keeping it playful. Facilitators provide frameworks, guiding questions and challenges
+                        encouraging deeper thought and application through exploration and choice.</p>
+                </div>
+
+                <!-- Principle 3 -->
+                <div class="col-md-4 px-lg-3 px-3"> <!-- Adjusted padding -->
+                    <div class="text-center">
+                        <h4>Custom Games</h4>
+                        <img src="https://i.ibb.co/cKNgHKs0/3-1-2.png" alt="Inclusivity Icon" class="img-fluid mb-3"
+                            style="max-height: 130px; width: auto;">
+                    </div>
+                    <div class="mb-3" style="height: 3px; width: 60px;"></div>
+                    <p class="lead">Custom-designed games align with specific learning objectives, making complex topics
+                        engaging
+                        and interactive. Through purposeful game mechanics, players develop targeted skills in an
+                        immersive and enjoyable way.</p>
+                </div>
             </div>
         </div>
-
-        <div class="row mt-">
-            <!-- Principle 1 -->
-            <div class="col-md-4 mb-3 mb-md-0 px-lg-4 px-3">  <!-- Adjusted padding -->
-                <div class="text-center">
-                    <h4>Free Play</h4>
-                    <img src="https://i.ibb.co/vvd3GhQb/3-1-1.png"
-                        alt="Creativity Icon" class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                </div>
-                <div class="mb-3"
-                    style="height: 3px; width: 60px;"></div>
-                <p class="lead">Free play allows participants to explore, experiment, and create freely with peers without
-                    rigid rules. It fosters creativity, problem-solving, and intrinsic motivation by letting
-                    players take the lead in their learning journey.
-                </p>
-            </div>
-
-            <!-- Principle 2 -->
-            <div class="col-md-4 mb-4 mb-md-0 px-lg-4 px-3 my-md-0 my-3">  <!-- Added vertical margin -->
-                <div class="text-center">
-                    <h4>Guided Play</h4>
-                    <img src="https://i.ibb.co/BVwQJKR5/3-1-3.png"
-                        alt="Learning Icon" class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                </div>                
-                <div class="mb-3"
-                    style="height: 3px; width: 60px;"></div>
-                <p class="lead">Guided play blends freedom with structure, using prompts or challenges to steer learning
-                    while keeping it playful. Facilitators provide frameworks, guiding questions and challenges
-                    encouraging deeper thought and application through exploration and choice.</p>
-            </div>
-
-            <!-- Principle 3 -->
-            <div class="col-md-4 px-lg-3 px-3">  <!-- Adjusted padding -->
-                <div class="text-center">
-                    <h4>Custom Games</h4>
-                    <img src="https://i.ibb.co/cKNgHKs0/3-1-2.png"
-                        alt="Inclusivity Icon" class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                </div>
-                <div class="mb-3"
-                    style="height: 3px; width: 60px;"></div>
-                <p class="lead">Custom-designed games align with specific learning objectives, making complex topics engaging
-                    and interactive. Through purposeful game mechanics, players develop targeted skills in an
-                    immersive and enjoyable way.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Upcoming Workshops Section -->
     <section class="workshops-section">
@@ -805,8 +834,8 @@
 
                     <div class="action-buttons d-flex flex-column gap-3">
                         <a href="program1.html" class="btn btn-primary btn-lg">Know more</a>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform" 
-                           class="btn btn-danger btn-lg">Register now!</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"
+                            class="btn btn-danger btn-lg">Register now!</a>
                     </div>
                 </div>
             </div>
@@ -832,9 +861,9 @@
                     <div id="carouselExample2" class="carousel slide program-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="3000">
-                                <img src="Emodor.png"
-                                    alt="Emodoor game" style="border-radius: 12px; display: block; width: 100%;">
-                                    <h2>1. Emodoor</h2>
+                                <img src="Emodor.png" alt="Emodoor game"
+                                    style="border-radius: 12px; display: block; width: 100%;">
+                                <h2>1. Emodoor</h2>
                                 <p class="lead">These are our social emotional learning games focused on building
                                     Emotional intelligence- self awareness, Empathy, Communication and self regulation.
                                 </p>
@@ -842,7 +871,7 @@
                             <div class="carousel-item" data-bs-interval="3000">
                                 <img src="https://i.ibb.co/5h5KrthR/freepik-the-style-is-candid-image-photography-with-natural-93615.jpg"
                                     alt="Wealth Up game" style="border-radius: 12px; display: block; width: 100%;">
-                                    <h2>2. Wealth Up</h2>
+                                <h2>2. Wealth Up</h2>
                                 <p class="lead">These are our financial literacy focused games and activities. It will
                                     help in understanding personal finance terms and developing key skills and mindsets
                                     for long term wealth creation.</p>
@@ -850,10 +879,12 @@
                         </div>
                         <!-- Custom Arrows -->
                         <div class="custom-carousel-arrows">
-                            <div class="custom-carousel-arrow prev" data-bs-target="#carouselExample2" data-bs-slide="prev">
+                            <div class="custom-carousel-arrow prev" data-bs-target="#carouselExample2"
+                                data-bs-slide="prev">
                                 <i class="bi bi-chevron-left"></i>
                             </div>
-                            <div class="custom-carousel-arrow next" data-bs-target="#carouselExample2" data-bs-slide="next">
+                            <div class="custom-carousel-arrow next" data-bs-target="#carouselExample2"
+                                data-bs-slide="next">
                                 <i class="bi bi-chevron-right"></i>
                             </div>
                         </div>
