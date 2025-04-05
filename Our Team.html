@@ -1,1 +1,670 @@
-<h1>UPCOMING</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Play Edge</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Intro&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FA6465;
+            --secondary-color: #7BAA4F;
+            --accent-color: #1A8FD3;
+            --highlight-color: #FFD200;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --font-heading: 'Intro', sans-serif;
+            --font-body: 'Arimo', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 10px;
+        }
+
+        /* Marquee styles */
+        .marquee-container {
+            background-color: #FFD200;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1100;
+            padding: 5px 0;
+        }
+
+        .marquee {
+            font-size: 16px;
+            color: #000;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 0.75em;
+        }
+
+        header.navbar {
+            min-height: 80px;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 35px;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand img {
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--dark-color) !important;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.3rem;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .nav-link:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 70%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .dropdown-menu {
+            margin-top: 0 !important;
+            border: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            border-top: 2px solid var(--primary-color) !important;
+            transform-origin: top center;
+            transition: all 0.3s ease;
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+        }
+
+        .dropdown-item {
+            font-weight: 600;
+            padding: 8px 20px;
+            color: var(--dark-color);
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(250, 100, 101, 0.05);
+            color: var(--primary-color);
+            padding-left: 25px !important;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .content-section {
+            padding: 100px 0;
+            border-bottom: 1px solid #cdcdcd;
+        }
+
+        .section-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .img-lg {
+            max-width: 500px;
+        }
+
+        .btn {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            width: 20rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #e85a5b;
+        }
+
+        .btn-success {
+            background-color: var(--secondary-color);
+            color: white !important;
+        }
+
+        .btn-success:hover {
+            background-color: #6b9844;
+        }
+
+        .btn-info {
+            background-color: var(--accent-color);
+            color: white !important;
+        }
+
+        .btn-info:hover {
+            background-color: #167ebf;
+        }
+
+        .btn-danger {
+            background-color: var(--highlight-color);
+            color: white !important;
+        }
+
+        .btn-danger:hover {
+            background-color: #FFD200;
+        }
+
+        .workshop-item {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .workshop-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-dropdown-link {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--dark-color);
+            font-weight: 600;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-dropdown-link:hover {
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+            padding-left: 1.25rem;
+            background-color: rgba(250, 100, 101, 0.05);
+        }
+
+        .workshops-section {
+            padding: 120px 0;
+            border-bottom: 1px solid #cdcdcd;
+        }
+
+        footer {
+            padding: 40px 0 30px;
+            background: white;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Remove the Explore button */
+        a.btn.btn-primary.btn-lg.mt-2[href="aboutus1.html"] {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 100px !important;
+            }
+
+            body {
+                padding-top: 100px;
+            }
+
+            .marquee {
+                font-size: 14px;
+            }
+
+            .img-lg {
+                max-width: 350px;
+            }
+
+            header.navbar {
+                min-height: 100px;
+                top: 25px;
+            }
+
+            .content-section,
+            .workshops-section {
+                padding: 60px 20px;
+            }
+
+            .content-section .text-start {
+                text-align: center !important;
+            }
+
+            .content-section .row {
+                gap: 30px;
+            }
+
+            .section-img.img-lg {
+                margin-bottom: 20px;
+            }
+
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .workshops-section .row {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                width: 80px !important;
+            }
+
+            body {
+                padding-top: 20px;
+            }
+
+            .marquee {
+                font-size: 12px;
+            }
+
+            header.navbar {
+                top: 20px;
+            }
+
+            .content-section,
+            .workshops-section {
+                padding: 40px 15px;
+            }
+
+            .section-img.img-lg {
+                max-width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                padding: 0.5rem 0;
+                background: white;
+                border-radius: 0 0 15px 15px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .dropdown-menu {
+                display: none !important;
+            }
+
+            .mobile-dropdown-links {
+                padding-left: 1.5rem;
+                margin-top: 0.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Marquee Banner -->
+    <div class="marquee-container">
+        <marquee class="marquee" direction="left">
+            🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird
+            discount.
+        </marquee>
+    </div>
+
+    <!-- Fixed Header Section -->
+    <header class="navbar navbar-expand-lg fixed-top py-1">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://i.ibb.co/yFdKjDZN/4.png" alt="Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" id="aboutDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+                        <a class="nav-link d-lg-none" href="aboutus1.html">About Us</a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="Our Story.html">Our Story</a></li>
+                            <li><a class="dropdown-item" href="Philosophy and Approach.html">Philosophy and Approach</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Our Team.html">Our Team</a></li>
+                        </ul>
+                        <div class="d-lg-none mobile-dropdown-links">
+                            <a href="Our Story.html" class="mobile-dropdown-link">Our Story</a>
+                            <a href="Philosophy and Approach.html" class="mobile-dropdown-link">Philosophy and
+                                Approach</a>
+                            <a href="Our Team.html" class="mobile-dropdown-link">Our Team</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" id="programDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Program</a>
+                        <a class="nav-link d-lg-none" href="program-1.html">Program</a>
+                        <ul class="dropdown-menu" aria-labelledby="programDropdown">
+                            <li><a class="dropdown-item" href="Future Leader Program.html">Future Leader Program</a>
+                            </li>
+                            <li><a class="dropdown-item" href="STEAM program.html">STEAM program</a></li>
+                            <li><a class="dropdown-item" href="Full Day Workshops.html">Full Day Workshops</a></li>
+                        </ul>
+                        <div class="d-lg-none mobile-dropdown-links">
+                            <a href="Future Leader Program.html" class="mobile-dropdown-link">Future Leader Program</a>
+                            <a href="STEAM program.html" class="mobile-dropdown-link">STEAM program</a>
+                            <a href="Full Day Workshops.html" class="mobile-dropdown-link">Full Day Workshops</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Games And Kit.html">Games And Kit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Blog.html">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- What is The Play Edge Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 ps-lg-4 pe-lg-4">
+                    Program
+                    <h1>OUR PHILOSOPHY AND
+                        APPROACH</h1>
+                    <p class="lead">
+                        Learning today needs to be more than just textbooks and tests—it needs to spark curiosity, build
+                        confidence, and equip learners for the real world. That’s why everything that weis built on our
+                        5 learning pillars and 3 play principles that create impactful experiences.
+                    </p>
+                    </p>
+                    <a href="aboutus1.html" class="btn btn-primary btn-lg mt-2">Explore</a>
+                </div>
+                <div class="col-md-6 text-center ps-lg-3 pe-lg-3">
+                    <img src="https://i.ibb.co/Zzbd28zV/freepik-the-style-is-candid-image-photography-with-natural-93618.png"
+                        alt="Children playing" class="section-img img-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CORE PRINCIPLES SECTION ===== -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 ps-lg-4 pe-lg-4">
+                    <h1>5 LEARNING PILLARS</h1>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-10 col-xl-8"> <!-- Adjusted column width -->
+                    <!-- Principle 1 -->
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img src="https://i.ibb.co/vvd3GhQb/3-1-1.png" alt="Creativity Icon" class="img-fluid mb-3"
+                                style="max-height: 130px; width: auto;">
+                        </div>
+                        <div class="col-md-6 pe-0"> <!-- Added pe-0 to remove right padding -->
+                            <div class="mb-3" style="height: 3px; width: 60px; background-color: #ddd;"></div>
+                            <div class="logo-caption">
+                                <h5>1. Real-World Learning
+                                    <p class="lead">We make sure everything we teach connects to real life. When
+                                        learning feels useful and meaningful, it ignites a sense of purpose.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principle 2 -->
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img src="https://i.ibb.co/BVwQJKR5/3-1-3.png" alt="Learning Icon" class="img-fluid mb-3"
+                                style="max-height: 130px; width: auto;">
+                        </div>
+                        <div class="col-md-6 pe-0">
+                            <div class="mb-3" style="height: 3px; width: 60px; background-color: #ddd;"></div>
+                            <div class="logo-caption">
+                                <h5>2. Learning by Doing
+                                    <p class="lead">Knowing something is great—but using it is even better. We focus on
+                                        hands-on tasks where we build, create, and solve problems.This deepens
+                                        understanding and builds confidence in turning ideas into action.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principle 3 -->
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img src="https://i.ibb.co/cKNgHKs0/3-1-2.png" alt="Inclusivity Icon" class="img-fluid mb-3"
+                                style="max-height: 130px; width: auto;">
+                        </div>
+                        <div class="col-md-6 pe-0">
+                            <div class="mb-3" style="height: 3px; width: 60px; background-color: #ddd;"></div>
+                            <div class="logo-caption">
+                                <h5>3. Project Work
+                                    <p class="lead">Learners take on fun, challenging projects that help them plan,
+                                        build, iterate and present their ideas. Completing projects gives a tangible
+                                        sense of achievement to feel proud of.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principle 4 -->
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img src="https://i.ibb.co/cKNgHKs0/3-1-2.png" alt="Inclusivity Icon" class="img-fluid mb-3"
+                                style="max-height: 130px; width: auto;">
+                        </div>
+                        <div class="col-md-6 pe-0">
+                            <div class="mb-3" style="height: 3px; width: 60px; background-color: #ddd;"></div>
+                            <div class="logo-caption">
+                                <h5>4. Experiential and
+                                    <p>multi sensorial
+                                    <p class="lead">We believe that the most lasting learning comes from doing. Through
+                                        building, experimenting, failing, and trying again, learners gain insights that
+                                        books alone can’t provide. Our approach transforms abstract concepts into lived
+                                        experiences, turning every mistake into a stepping stone.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principle 5 -->
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img src="https://i.ibb.co/cKNgHKs0/3-1-2.png" alt="Inclusivity Icon" class="img-fluid mb-3"
+                                style="max-height: 130px; width: auto;">
+                        </div>
+                        <div class="col-md-6 pe-0">
+                            <div class="mb-3" style="height: 3px; width: 60px; background-color: #ddd;"></div>
+                            <div class="logo-caption">
+                                <h5>5. Balance of Individual<p>and Team Work
+                                    <p class="lead">Our program nurtures both independent thinkers and collaborative
+                                        creators. We design activities that allow for personal reflection, creative
+                                        autonomy, and self-expression—while also encouraging teamwork, shared
+                                        responsibility, and collective innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== CORE PRINCIPLES SECTION ===== -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 ps-lg-4 pe-lg-4">
+                    <h1>3 PLAY PRINCIPLES</h1>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-10 col-xl-8"> <!-- Adjusted column width -->
+                    <!-- Principle 1 -->
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img src="https://i.ibb.co/vvd3GhQb/3-1-1.png" alt="Creativity Icon" class="img-fluid mb-3"
+                                style="max-height: 130px; width: auto;">
+                        </div>
+                        <div class="col-md-6 pe-0"> <!-- Added pe-0 to remove right padding -->
+                            <div class="mb-3" style="height: 3px; width: 60px; background-color: #ddd;"></div>
+                            <div class="logo-caption">
+                                <h5>1. Meaningful and <p>Real-World Relevance
+                                    <p class="lead">Learning becomes impactful when it connects with the real world.
+                                        We ensure that every concept taught is grounded in real-life contexts. By
+                                        making learning relevant, we ignite a sense of purpose.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principle 2 -->
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img src="https://i.ibb.co/BVwQJKR5/3-1-3.png" alt="Learning Icon" class="img-fluid mb-3"
+                                style="max-height: 130px; width: auto;">
+                        </div>
+                        <div class="col-md-6 pe-0">
+                            <div class="mb-3" style="height: 3px; width: 60px; background-color: #ddd;"></div>
+                            <div class="logo-caption">
+                                <h5>2. Application based</h5>
+                                <p class="lead">Understanding theory is just the beginning—what truly matters is how
+                                    we apply it. We believe in actively learning through hands-on tasks, prototypes,
+                                    and creative problem-solving. This deepens understanding and builds confidence
+                                    in turning ideas into action.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principle 3 -->
+                    <div class="row mb-5 align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img src="https://i.ibb.co/cKNgHKs0/3-1-2.png" alt="Inclusivity Icon" class="img-fluid mb-3"
+                                style="max-height: 130px; width: auto;">
+                        </div>
+                        <div class="col-md-6 pe-0">
+                            <div class="mb-3" style="height: 3px; width: 60px; background-color: #ddd;"></div>
+                            <div class="logo-caption">
+                                <h5>3. Projects</h5>
+                                <p class="lead">Learning becomes impactful when it connects with the real world.
+                                    Our program ensures that every concept taught is grounded in real-life
+                                    contexts. By making learning relevant, we ignite a sense of purpose in every
+                                    participant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <img src="https://i.ibb.co/yFdKjDZN/4.png" alt="Logo" style="width: 115px;">
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <p class="mb-1">Email: aditya@theplayedge.com</p>
+                    <p class="mb-0">+91 93732 07517</p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <p class="mb-2 fw-bold">Follow Us</p>
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
+                        <a href="https://www.instagram.com/the_play_edge/" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+                                style="width: 30px;">
+                        </a>
+                        <a href="https://wa.me/+919373207517" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp"
+                                style="width: 30px;">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook"
+                                style="width: 30px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="mb-0 small">2025 The Play Edge. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
