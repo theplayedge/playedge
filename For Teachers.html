@@ -31,21 +31,25 @@
             flex-direction: column;
             min-height: 100vh;
             padding-top: 10px;
+            /* Increased to accommodate marquee */
         }
 
         /* Marquee styles */
         .marquee-container {
             background-color: #FFD200;
+            /* Yellow background */
             width: 100%;
             position: fixed;
             top: 0;
             z-index: 1100;
+            /* Above navbar */
             padding: 5px 0;
         }
 
         .marquee {
             font-size: 16px;
             color: #000;
+            /* Black text */
             font-weight: normal;
             white-space: nowrap;
         }
@@ -67,6 +71,7 @@
             padding: 0.5rem 0;
             position: sticky;
             top: 35px;
+            /* Adjusted for marquee */
             z-index: 1000;
             background-color: white;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
@@ -145,6 +150,82 @@
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
+        }
+
+        .carousel-section {
+            width: 100%;
+            position: relative;
+        }
+
+        /* Custom Arrow Styles */
+        .custom-carousel-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 10;
+            transform: translateY(-50%);
+        }
+
+        .custom-carousel-arrow {
+            pointer-events: all;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 15px;
+            border: 1px solid rgba(127, 125, 125, 0.484);
+        }
+
+        .custom-carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .custom-carousel-arrow i {
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        /* Hide default carousel controls */
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none !important;
+        }
+
+        /* Program Carousel Specific Styles */
+        .program-carousel {
+            max-width: 85%;
+            margin: auto;
+            position: relative;
+        }
+
+        .program-carousel .carousel-inner {
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        /* Smaller arrows for program carousel */
+        .program-carousel .custom-carousel-arrow {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(202, 202, 202, 0.1);
+        }
+
+        .program-carousel .custom-carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .program-carousel .custom-carousel-arrow i {
+            color: #333;
+            font-size: 1.2rem;
         }
 
         .content-section {
@@ -235,6 +316,47 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
+        .gallery-container {
+            padding: 100px 0;
+            border-bottom: 1px solid #cdcdcd;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 180px;
+            height: 220px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            padding: 40px 0 30px;
+            background: white;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
         .mobile-dropdown-link {
             display: block;
             padding: 0.5rem 1rem;
@@ -256,17 +378,12 @@
             border-bottom: 1px solid #cdcdcd;
         }
 
-        footer {
-            padding: 40px 0 30px;
-            background: white;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        /* Added spacing for carousel headings */
+        .program-carousel h2 {
+            margin-top: 20px;
         }
 
-        /* Remove the Explore button */
-        a.btn.btn-primary.btn-lg.mt-2[href="aboutus1.html"] {
-            display: none;
-        }
-
+        /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             .navbar-brand img {
                 width: 100px !important;
@@ -284,12 +401,19 @@
                 max-width: 350px;
             }
 
+            .gallery-item {
+                width: 150px;
+                height: 190px;
+            }
+
             header.navbar {
                 min-height: 100px;
                 top: 25px;
             }
 
             .content-section,
+            .program-section,
+            .gallery-container,
             .workshops-section {
                 padding: 60px 20px;
             }
@@ -298,6 +422,7 @@
                 text-align: center !important;
             }
 
+            /* New mobile spacing additions */
             .content-section .row {
                 gap: 30px;
             }
@@ -315,6 +440,23 @@
             .workshops-section .row {
                 gap: 30px;
             }
+
+            /* Adjust carousel controls for mobile */
+            .custom-carousel-arrow {
+                width: 40px;
+                height: 40px;
+                margin: 0 10px;
+            }
+
+            .custom-carousel-arrow i {
+                font-size: 1.2rem;
+            }
+
+            /* Adjust carousel arrows position for mobile */
+            .program-carousel .custom-carousel-arrows,
+            #carouselExample2 .custom-carousel-arrows {
+                top: 30% !important;
+            }
         }
 
         @media (max-width: 576px) {
@@ -330,21 +472,46 @@
                 font-size: 12px;
             }
 
+            .gallery-item {
+                width: 130px;
+                height: 170px;
+            }
+
             header.navbar {
                 top: 20px;
             }
 
             .content-section,
+            .program-section,
+            .gallery-container,
             .workshops-section {
                 padding: 40px 15px;
             }
 
+            /* New small mobile additions */
             .section-img.img-lg {
                 max-width: 100%;
             }
 
             .btn {
                 width: 100%;
+            }
+
+            /* Further adjust carousel controls for small screens */
+            .custom-carousel-arrow {
+                width: 35px;
+                height: 35px;
+                margin: 0 5px;
+            }
+
+            .custom-carousel-arrow i {
+                font-size: 1rem;
+            }
+
+            /* More adjustment for small screens */
+            .program-carousel .custom-carousel-arrows,
+            #carouselExample2 .custom-carousel-arrows {
+                top: 25% !important;
             }
         }
 
@@ -369,7 +536,7 @@
 </head>
 
 <body>
-    <!-- Marquee Banner -->
+            
     <div class="marquee-container">
         <marquee class="marquee" direction="left">
             🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird
@@ -413,15 +580,15 @@
                             role="button" aria-expanded="false">Program</a>
                         <a class="nav-link d-lg-none" href="Program.html">Program</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Future Leader Program.html">Future Leader Program</a>
+                            <li><a class="dropdown-item" href="For Childrens.html">For Childrens </a>
                             </li>
-                            <li><a class="dropdown-item" href="STEAM program.html">STEAM program</a></li>
-                            <li><a class="dropdown-item" href="Full Day Workshops.html">Full Day Workshops</a></li>
+                            <li><a class="dropdown-item" href="For Teachers.htm">For Teachers</a></li>
+                            
                         </ul>
                         <div class="d-lg-none mobile-dropdown-links">
-                            <a href="Future Leader Program.html" class="mobile-dropdown-link">Future Leader Program</a>
-                            <a href="STEAM program.html" class="mobile-dropdown-link">STEAM program</a>
-                            <a href="Full Day Workshops.html" class="mobile-dropdown-link">Full Day Workshops</a>
+                            <a href="For Childrens.html" class="mobile-dropdown-link">For Childrens</a>
+                            <a href="For Teachers.html" class="mobile-dropdown-link">For Teachers</a>
+                            
                         </div>
                     </li>
                     <li class="nav-item">
@@ -435,95 +602,14 @@
         </div>
     </header>
 
-    <!-- ===== CORE PRINCIPLES SECTION ===== -->
     <section class="content-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6 ps-lg-4 pe-lg-4">
-                    <h1>1. FUTURE LEADER PROGRAM</h1>
-                    <p class="lead">
-                        This in-depth program develops leadership skills, knowledge and mindsets for holistic
-                        development of children. Our monthly team challenges cover UNs sustainable development goals and
-                        end of project presentation showcases. We help children experience, understand and solve world
-                        challenges they face today.
-                    <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-                        <p><strong>Projects duration:</strong> 4 weeks</p>
-                        <p><strong>Sign up duration:</strong> 4 weeks</p>
-                        <p><strong>Frequency of classes:</strong> 2 times/week (1.5-hour sessions)</p>
-                        <p><strong>Age group:</strong> 9 years to 15 years</p>
-                    </div>
+                <div class="col-12 text-center">
+                    <h1>COMEING SOON  </h1>
                 </div>
-                <div class="row mt-5 flex-nowrap overflow-auto">
-                    <div class="row mt-5 justify-content-center">
-                        <div class="row gap-5 justify-content-center"> <!-- Added gap-3 -->
-                            <!-- Principle 1 -->
-                            <div class="col-auto px-2 mx-1">
-                                <div class="text-center">
-                                    <img src="pro1.png" alt="Creativity Icon"
-                                        class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                                    <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #ddd;">
-                                    </div>
-                                    <div class="logo-caption">
-                                        <h5>UN SDG aligned<p> project themes
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Principle 2 -->
-                            <div class="col-auto px-2 mx-1">
-                                <div class="text-center">
-                                    <img src="pro4.png" alt="Learning Icon"
-                                        class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                                    <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #ddd;">
-                                    </div>
-                                    <div class="logo-caption">
-                                        <h5>Design thinking
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Principle 3 -->
-                            <div class="col-auto px-2 mx-1">
-                                <div class="text-center">
-                                    <img src="pro3.png" alt="Inclusivity Icon"
-                                        class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                                    <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #ddd;">
-                                    </div>
-                                    <div class="logo-caption">
-                                        <h5>Project showcase
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Principle 4 -->
-                            <div class="col-auto px-2 mx-1">
-                                <div class="text-center">
-                                    <img src="pro2.png" alt="Inclusivity Icon"
-                                        class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                                    <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #ddd;">
-                                    </div>
-                                    <div class="logo-caption">
-                                        <h5>Critical life<p> skills development
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Principle 5 -->
-                            <div class="col-auto px-2 mx-1">
-                                <div class="text-center">
-                                    <img src="https://i.ibb.co/cKNgHKs0/3-1-2.png" alt="Inclusivity Icon"
-                                        class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                                    <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #ddd;">
-                                    </div>
-                                    <div class="logo-caption">
-                                        <h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    </section>
-
-    <!-- Footer -->
+            </div>
+            <div class="row mt-3">
     <footer>
         <div class="container">
             <div class="row align-items-center">
