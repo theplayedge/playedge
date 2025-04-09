@@ -4,460 +4,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Play Edge</title>
+    <title>The Play Edge - Our Team</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Intro&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #FA6465;
-            --secondary-color: #7BAA4F;
-            --accent-color: #1A8FD3;
-            --highlight-color: #FFD200;
-            --dark-color: #2c3e50;
-            --light-color: #f8f9fa;
-            --font-heading: 'Intro', sans-serif;
-            --font-body: 'Arimo', sans-serif;
+     :root {
+        --primary-color: #FA6465;
+        --secondary-color: #7BAA4F;
+        --accent-color: #1A8FD3;
+        --highlight-color: #FFD200;
+        --dark-color: #2c3e50;
+        --light-color: #f8f9fa;
+        --font-heading: 'Intro', sans-serif;
+        --font-body: 'Arimo', sans-serif;
+    }
+
+    body {
+        font-family: var(--font-body);
+        background-color: #ffffff;
+        color: #000000;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding-top: 10px;
+    }
+
+    /* Marquee styles */
+    .marquee-container {
+        background-color: #FFD200;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1100;
+        padding: 5px 0;
+    }
+
+    .marquee {
+        font-size: 16px;
+        color: #000;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+        font-weight: bold;
+        line-height: 1.3;
+        margin-bottom: 0.75em;
+    }
+
+    header.navbar {
+        min-height: 80px;
+        padding: 0.5rem 0;
+        position: sticky;
+        top: 35px;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-brand img {
+        width: 100px;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-brand:hover img {
+        transform: scale(1.05);
+    }
+
+    .nav-link {
+        font-family: var(--font-heading);
+        font-weight: 600;
+        color: var(--dark-color) !important;
+        padding: 0.5rem 1rem !important;
+        margin: 0 0.3rem;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    .nav-link:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .nav-link:hover:before,
+    .nav-link.active:before {
+        width: 70%;
+    }
+
+    .nav-link:hover {
+        color: var(--primary-color) !important;
+        transform: translateY(-2px);
+    }
+
+    .dropdown-menu {
+        margin-top: 0 !important;
+        border: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        border-top: 2px solid var(--primary-color) !important;
+        transform-origin: top center;
+        transition: all 0.3s ease;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+    }
+
+    .dropdown-item {
+        font-weight: 600;
+        padding: 8px 20px;
+        color: var(--dark-color);
+        transition: all 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(250, 100, 101, 0.05);
+        color: var(--primary-color);
+        padding-left: 25px !important;
+    }
+
+    .nav-item.dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .carousel-section {
+        width: 100%;
+        position: relative;
+    }
+
+    footer {
+        padding: 40px 0 30px;
+        background: white;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-dropdown-link {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: var(--dark-color);
+        font-weight: 600;
+        border-left: 3px solid transparent;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-dropdown-link:hover {
+        color: var(--primary-color);
+        border-left-color: var(--primary-color);
+        padding-left: 1.25rem;
+        background-color: rgba(250, 100, 101, 0.05);
+    }
+
+    /* Team Section Styles */
+    .team-section {
+        padding: 80px 0;
+        background-color: #ffffff;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+    }
+
+    .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--dark-color);
+        display: inline-block;
+    }
+
+    .section-title h2:after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary-color);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .team-member {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        background: white;
+        padding: 70px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .member-image {
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 40px;
+        border: 5px solid #f1f1f1;
+        flex-shrink: 0;
+    }
+
+    .member-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .member-info {
+        flex-grow: 1;
+    }
+
+    .member-name {
+        font-size: 1.75rem;
+        color: var(--dark-color);
+        margin-bottom: 10px;
+        font-family: var(--font-heading);
+    }
+
+    .member-role {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: block;
+        font-size: 1.1rem;
+    }
+
+    .member-description {
+        color: #000000;
+        line-height: 1.7;
+        font-size: 1rem;
+    }
+
+    .member-social {
+        margin-top: 15px;
+    }
+
+    .member-social a {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        background: #f5f5f5;
+        color: var(--dark-color);
+        border-radius: 50%;
+        margin-right: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .member-social a:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+    }
+   
+    /* Mobile-specific adjustments */
+    @media (max-width: 768px) {
+        .navbar-brand img {
+            width: 100px !important;
         }
 
         body {
-            font-family: var(--font-body);
-            background-color: #ffffff;
-            color: #000000;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding-top: 10px;
-        }
-
-        /* Marquee styles */
-        .marquee-container {
-            background-color: #FFD200;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            z-index: 1100;
-            padding: 5px 0;
+            padding-top: 100px;
         }
 
         .marquee {
-            font-size: 16px;
-            color: #000;
-            font-weight: normal;
-            white-space: nowrap;
+            font-size: 14px;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: var(--font-heading);
-            font-weight: bold;
-            line-height: 1.3;
-            margin-bottom: 0.75em;
+        .img-lg {
+            max-width: 350px;
         }
 
         header.navbar {
-            min-height: 80px;
-            padding: 0.5rem 0;
-            position: sticky;
-            top: 35px;
-            z-index: 1000;
-            background-color: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            min-height: 100px;
+            top: 25px;
         }
 
-        .navbar-brand img {
-            width: 100px;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .navbar-brand:hover img {
-            transform: scale(1.05);
-        }
-
-        .nav-link {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            color: var(--dark-color) !important;
-            padding: 0.5rem 1rem !important;
-            margin: 0 0.3rem;
-            border-radius: 20px;
-            position: relative;
-        }
-
-        .nav-link:before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover:before,
-        .nav-link.active:before {
-            width: 70%;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-            transform: translateY(-2px);
-        }
-
-        .dropdown-menu {
-            margin-top: 0 !important;
-            border: none;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            border-radius: 12px;
-            border-top: 2px solid var(--primary-color) !important;
-            transform-origin: top center;
-            transition: all 0.3s ease;
-            display: block;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-        }
-
-        .dropdown-item {
-            font-weight: 600;
-            padding: 8px 20px;
-            color: var(--dark-color);
-            transition: all 0.2s ease;
-        }
-
-        .dropdown-item:hover {
-            background-color: rgba(250, 100, 101, 0.05);
-            color: var(--primary-color);
-            padding-left: 25px !important;
-        }
-
-        .nav-item.dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .carousel-section {
-            width: 100%;
-            position: relative;
-        }
-
-        footer {
-            padding: 40px 0 30px;
-            background: white;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .mobile-dropdown-link {
-            display: block;
-            padding: 0.5rem 1rem;
-            color: var(--dark-color);
-            font-weight: 600;
-            border-left: 3px solid transparent;
-            transition: all 0.2s ease;
-        }
-
-        .mobile-dropdown-link:hover {
-            color: var(--primary-color);
-            border-left-color: var(--primary-color);
-            padding-left: 1.25rem;
-            background-color: rgba(250, 100, 101, 0.05);
-        }
-
-        /* Team Section Styles */
-        .team-section {
-            max-width: 3000px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .team-title {
-            font-size: 2.9rem;
-            color: #000000;
-            margin-bottom: 50px;
-            position: relative;
-            display: inline-block;
-            animation: fadeInDown 1s ease;
-        }
-
-        .team-title::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            bottom: -10px;
-            left: 15%;
-            border-radius: 3px;
-        }
-
-        .team-members {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 130px;
-            margin-top: 30px;
-            width: 100%;
-        }
-
+        /* Team section mobile adjustments */
         .team-member {
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            opacity: 0;
-            animation: fadeInUp 0.7s ease forwards;
-        }
-
-        .team-member:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .team-member:nth-child(2) {
-            animation-delay: 0.4s;
+            flex-direction: column;
+            text-align: center;
+            padding: 25px;
         }
 
         .member-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #feb47b;
-            margin: 0 auto 20px;
-            display: block;
-            transition: transform 0.3s ease;
+            margin-right: 0;
+            margin-bottom: 25px;
+            width: 160px;
+            height: 160px;
         }
 
-        .team-member:hover .member-image {
-            transform: scale(1.05);
+        .member-info {
+            text-align: center;
+        }
+
+        .member-social {
+            justify-content: center;
+        }
+    }
+        
+    @media (max-width: 576px) {
+        .navbar-brand img {
+            width: 80px !important;
+        }
+
+        body {
+            padding-top: 20px;
+        }
+
+        .marquee {
+            font-size: 12px;
+        }
+       
+        header.navbar {
+            top: 20px;
+        }
+
+        /* Team section small mobile adjustments */
+        .team-section {
+            padding: 60px 0;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+        }
+
+        .member-image {
+            width: 140px;
+            height: 140px;
         }
 
         .member-name {
             font-size: 1.5rem;
-            color: #000000;
-            margin-bottom: 5px;
-            font-weight: 700;
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .navbar-collapse {
+            padding: 0.5rem 0;
+            background: white;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .member-position {
-            color: #000000;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+        .dropdown-menu {
+            display: none !important;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+        .mobile-dropdown-links {
+            padding-left: 1.5rem;
+            margin-top: 0.25rem;
         }
+    }
+</style>
 
-        .social-links a {
-            color: #666;
-            font-size: 1.7rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #f2ff00;
-            transform: translateY(-3px);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Added spacing for carousel headings */
-        .program-carousel h2 {
-            margin-top: 20px;
-        }
-
-        /* Mobile-specific adjustments */
-        @media (max-width: 768px) {
-            .navbar-brand img {
-                width: 100px !important;
-            }
-
-            body {
-                padding-top: 100px;
-            }
-
-            .marquee {
-                font-size: 14px;
-            }
-
-            .img-lg {
-                max-width: 350px;
-            }
-
-            header.navbar {
-                min-height: 100px;
-                top: 25px;
-            }
-
-            .content-section,
-            .program-section,
-            .gallery-container,
-            .workshops-section,
-            .team-section {
-                padding: 60px 20px;
-            }
-
-            .content-section .text-start {
-                text-align: center !important;
-            }
-
-            /* New mobile spacing additions */
-            .content-section .row {
-                gap: 30px;
-            }
-
-            .section-img.img-lg {
-                margin-bottom: 20px;
-            }
-
-            .btn-container {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .workshops-section .row {
-                gap: 30px;
-            }
-
-            /* Adjust carousel controls for mobile */
-            .custom-carousel-arrow {
-                width: 40px;
-                height: 40px;
-                margin: 0 10px;
-            }
-
-            .custom-carousel-arrow i {
-                font-size: 1.2rem;
-            }
-
-            /* Adjust carousel arrows position for mobile */
-            .program-carousel .custom-carousel-arrows,
-            #carouselExample2 .custom-carousel-arrows {
-                top: 30% !important;
-            }
-
-            /* Team section mobile adjustments */
-            .team-members {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .team-title {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .navbar-brand img {
-                width: 80px !important;
-            }
-
-            body {
-                padding-top: 20px;
-            }
-
-            .marquee {
-                font-size: 12px;
-            }
-
-            .gallery-item {
-                width: 130px;
-                height: 170px;
-            }
-
-            header.navbar {
-                top: 20px;
-            }
-
-            .content-section,
-            .program-section,
-            .gallery-container,
-            .workshops-section,
-            .team-section {
-                padding: 40px 15px;
-            }
-
-            /* New small mobile additions */
-            .section-img.img-lg {
-                max-width: 100%;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            /* Further adjust carousel controls for small screens */
-            .custom-carousel-arrow {
-                width: 35px;
-                height: 35px;
-                margin: 0 5px;
-            }
-
-            .custom-carousel-arrow i {
-                font-size: 1rem;
-            }
-
-            /* More adjustment for small screens */
-            .program-carousel .custom-carousel-arrows,
-            #carouselExample2 .custom-carousel-arrows {
-                top: 25% !important;
-            }
-        }
-
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                padding: 0.5rem 0;
-                background: white;
-                border-radius: 0 0 15px 15px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            }
-
-            .dropdown-menu {
-                display: none !important;
-            }
-
-            .mobile-dropdown-links {
-                padding-left: 1.5rem;
-                margin-top: 0.25rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -505,16 +432,14 @@
                             role="button" aria-expanded="false">Program</a>
                         <a class="nav-link d-lg-none" href="Program.html">Program</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="For Children.html">For Children</a></li>
+                            <li><a class="dropdown-item" href="For Children.html">For Children </a>
                             <li>
                                 <a class="dropdown-item" href="For Teachers.html">For Teachers</a>
                             </li>
-
                         </ul>
                         <div class="d-lg-none mobile-dropdown-links">
                             <a href="For Children.html" class="mobile-dropdown-link">For Children</a>
                             <a href="For Teachers.html" class="mobile-dropdown-link">For Teachers</a>
-
                         </div>
                     </li>
                     <li class="nav-item">
@@ -528,45 +453,55 @@
         </div>
     </header>
 
-    <!-- Team Section -->
-    <section class="team-section">
-        <h1 class="team-title">OUR TEAM</h1>
+    <!-- Main Content -->
+    <main>
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>OUR TEAM</h2>
+                </div>
 
-        <div class="team-members">
-            <!-- Team Member 1 -->
-            <div class="team-member">
-                <img src="pro2.png" alt="Helena Farse" class="member-image">
-                <h3 class="member-name">Aditya Kashikar
-                </h3>
-                <p class="member-position">Aditya brings over a decade of experience in the education sector, with a
-                    deep focus on designing impactful, play-based, and experiential learning programs that build
-                    essential life and leadership skills. A certified LEGO® SERIOUS PLAY® facilitator, Aditya integrates
-                    hands-on, creative methodologies to make learning meaningful, memorable, and deeply engaging.
-                    He began his journey as an educator teaching Math, Visual Arts, and Design to students from Grades 2
-                    to 10, before moving into curriculum design and teacher coach training. His diverse background gives
-                    him a unique edge in designing programs that are both joyful and effective across age groups.
-                    Aditya envisions The Play Edge becoming a movement that redefines how we learn and grow—where play
-                    is not an afterthought, but a powerful tool for transformation.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Aditya.png" alt="Sarah Johnson">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Aditya Kashikar</h3>
+                        <span class="member-role">Founder</span>
+                        <p class="member-description">
+                            Aditya brings over a decade of experience in the education sector, with a deep focus on designing impactful, play-based, and experiential learning programs that build essential life and leadership skills. A certified LEGO® SERIOUS PLAY® facilitator, Aditya integrates hands-on, creative methodologies to make learning meaningful, memorable, and deeply engaging.
+                            He began his journey as an educator teaching Math, Visual Arts, and Design to students from Grades 2 to 10, before moving into curriculum design and teacher coach training. His diverse background gives him a unique edge in designing programs that are both joyful and effective across age groups.
+                            Aditya envisions The Play Edge becoming a movement that redefines how we learn and grow—where play is not an afterthought, but a powerful tool for transformation.
+                            
+                        </p>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/aditya-kashikar-170586a3/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/kashikaraditya/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="venkatesh.png" alt="Michael Chen">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Venkatesh Pawar</h3>
+                        <span class="member-role">Founding Team member</span>
+                        <p class="member-description">
+                            hi
+                        </p>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/venkatesh-pawar-1b5069251/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/venkatesh.02.28/"><i class="fab fa-instagram"></i></a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Team Member 2 -->
-            <div class="team-member">
-                <img src="venkatesh.png" alt="Dan Pitts" class="member-image">
-                <h3 class="member-name">Venkatesh Pawar</h3>
-                <p class="member-position">Professional Guide | 5 years experience</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/venkatesh.02.28/" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/venkatesh-pawar-1b5069251/?trk=public-profile-join-page"
-                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
@@ -607,5 +542,4 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
