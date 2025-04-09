@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Play Edge</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Intro&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FA6465;
+            --secondary-color: #7BAA4F;
+            --accent-color: #1A8FD3;
+            --highlight-color: #FFD200;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --font-heading: 'Intro', sans-serif;
+            --font-body: 'Arimo', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 10px;
+            /* Increased to accommodate marquee */
+        }
+
+        /* Marquee styles */
+        .marquee-container {
+            background-color: #FFD200;
+            /* Yellow background */
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1100;
+            /* Above navbar */
+            padding: 5px 0;
+        }
+
+        .marquee {
+            font-size: 16px;
+            color: #000;
+            /* Black text */
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 0.75em;
+        }
+
+        header.navbar {
+            min-height: 80px;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 35px;
+            /* Adjusted for marquee */
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand img {
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--dark-color) !important;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.3rem;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .nav-link:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 70%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .dropdown-menu {
+            margin-top: 0 !important;
+            border: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            border-top: 2px solid var(--primary-color) !important;
+            transform-origin: top center;
+            transition: all 0.3s ease;
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+        }
+
+        .dropdown-item {
+            font-weight: 600;
+            padding: 8px 20px;
+            color: var(--dark-color);
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(250, 100, 101, 0.05);
+            color: var(--primary-color);
+            padding-left: 25px !important;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .carousel-section {
+            width: 100%;
+            position: relative;
+        }
+
+        /* Custom Arrow Styles */
+        .custom-carousel-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 10;
+            transform: translateY(-50%);
+        }
+
+        .custom-carousel-arrow {
+            pointer-events: all;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 15px;
+            border: 1px solid rgba(127, 125, 125, 0.484);
+        }
+
+        .custom-carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .custom-carousel-arrow i {
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        /* Hide default carousel controls */
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none !important;
+        }
+
+        /* Program Carousel Specific Styles */
+        .program-carousel {
+            max-width: 85%;
+            margin: auto;
+            position: relative;
+        }
+
+        .program-carousel .carousel-inner {
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        /* Smaller arrows for program carousel */
+        .program-carousel .custom-carousel-arrow {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(202, 202, 202, 0.1);
+        }
+
+        .program-carousel .custom-carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .program-carousel .custom-carousel-arrow i {
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .content-section {
+            padding: 100px 0;
+            border-bottom: 1px solid #cdcdcd;
+        }
+
+        .section-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .img-lg {
+            max-width: 500px;
+        }
+
+        .btn {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            width: 20rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #e85a5b;
+        }
+
+        .btn-success {
+            background-color: var(--secondary-color);
+            color: white !important;
+        }
+
+        .btn-success:hover {
+            background-color: #6b9844;
+        }
+
+        .btn-info {
+            background-color: var(--accent-color);
+            color: white !important;
+        }
+
+        .btn-info:hover {
+            background-color: #167ebf;
+        }
+
+        .btn-danger {
+            background-color: var(--highlight-color);
+            color: white !important;
+        }
+
+        .btn-danger:hover {
+            background-color: #FFD200;
+        }
+
+        .workshop-item {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .workshop-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-container {
+            padding: 100px 0;
+            border-bottom: 1px solid #cdcdcd;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 180px;
+            height: 220px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Blog Section Styles */
+        .blog-section {
+            padding: 100px 0;
+            border-bottom: 1px solid #cdcdcd;
+        }
+
+        .blog-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .blog-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .blog-item {
+            width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .blog-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-item-name {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-top: 10px;
+        }
+
+        footer {
+            padding: 40px 0 30px;
+            background: white;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-dropdown-link {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--dark-color);
+            font-weight: 600;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-dropdown-link:hover {
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+            padding-left: 1.25rem;
+            background-color: rgba(250, 100, 101, 0.05);
+        }
+
+        .workshops-section {
+            padding: 120px 0;
+            border-bottom: 1px solid #cdcdcd;
+        }
+
+        /* Added spacing for carousel headings */
+        .program-carousel h2 {
+            margin-top: 20px;
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 100px !important;
+            }
+
+            body {
+                padding-top: 100px;
+            }
+
+            .marquee {
+                font-size: 14px;
+            }
+
+            .img-lg {
+                max-width: 350px;
+            }
+
+            .gallery-item {
+                width: 150px;
+                height: 190px;
+            }
+
+            header.navbar {
+                min-height: 100px;
+                top: 25px;
+            }
+
+            .content-section,
+            .program-section,
+            .gallery-container,
+            .workshops-section,
+            .blog-section {
+                padding: 60px 20px;
+            }
+
+            .content-section .text-start {
+                text-align: center !important;
+            }
+
+            /* New mobile spacing additions */
+            .content-section .row {
+                gap: 30px;
+            }
+
+            .section-img.img-lg {
+                margin-bottom: 20px;
+            }
+
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .workshops-section .row {
+                gap: 30px;
+            }
+
+            /* Adjust carousel controls for mobile */
+            .custom-carousel-arrow {
+                width: 40px;
+                height: 40px;
+                margin: 0 10px;
+            }
+
+            .custom-carousel-arrow i {
+                font-size: 1.2rem;
+            }
+
+            /* Adjust carousel arrows position for mobile */
+            .program-carousel .custom-carousel-arrows,
+            #carouselExample2 .custom-carousel-arrows {
+                top: 30% !important;
+            }
+
+            /* Blog section mobile adjustments */
+            .blog-item {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                width: 80px !important;
+            }
+
+            body {
+                padding-top: 20px;
+            }
+
+            .marquee {
+                font-size: 12px;
+            }
+
+            .gallery-item {
+                width: 130px;
+                height: 170px;
+            }
+
+            header.navbar {
+                top: 20px;
+            }
+
+            .content-section,
+            .program-section,
+            .gallery-container,
+            .workshops-section,
+            .blog-section {
+                padding: 40px 15px;
+            }
+
+            /* New small mobile additions */
+            .section-img.img-lg {
+                max-width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            /* Further adjust carousel controls for small screens */
+            .custom-carousel-arrow {
+                width: 35px;
+                height: 35px;
+                margin: 0 5px;
+            }
+
+            .custom-carousel-arrow i {
+                font-size: 1rem;
+            }
+
+            /* More adjustment for small screens */
+            .program-carousel .custom-carousel-arrows,
+            #carouselExample2 .custom-carousel-arrows {
+                top: 25% !important;
+            }
+
+            /* Blog section small mobile adjustments */
+            .blog-item {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                padding: 0.5rem 0;
+                background: white;
+                border-radius: 0 0 15px 15px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .dropdown-menu {
+                display: none !important;
+            }
+
+            .mobile-dropdown-links {
+                padding-left: 1.5rem;
+                margin-top: 0.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+            
+    <div class="marquee-container">
+        <marquee class="marquee" direction="left">
+            🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird
+            discount.
+        </marquee>
+    </div>
+
+    <!-- Fixed Header Section -->
+    <header class="navbar navbar-expand-lg fixed-top py-1">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://i.ibb.co/yFdKjDZN/4.png" alt="Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="index.html" id="aboutDropdown"
+                            role="button" aria-expanded="false">About Us</a>
+                        <a class="nav-link d-lg-none" href="index.html">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Our Story.html">Our Story</a></li>
+                            <li><a class="dropdown-item" href="Philosophy and Approach.html">Philosophy and Approach</a>
+                            </li>
+                            <li><a class="dropdown-item" href="Our Team.html">Our Team</a></li>
+                        </ul>
+                        <div class="d-lg-none mobile-dropdown-links">
+                            <a href="Our Story.html" class="mobile-dropdown-link">Our Story</a>
+                            <a href="Philosophy and Approach.html" class="mobile-dropdown-link">Philosophy and
+                                Approach</a>
+                            <a href="Our Team.html" class="mobile-dropdown-link">Our Team</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="Program.html" id="programDropdown"
+                            role="button" aria-expanded="false">Program</a>
+                        <a class="nav-link d-lg-none" href="Program.html">Program</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="For Children.html">For Children </a>
+                            </li>
+                            <li><a class="dropdown-item" href="For Teachers.htm">For Teachers</a></li>
+                            
+                        </ul>
+                        <div class="d-lg-none mobile-dropdown-links">
+                            <a href="For Children.html" class="mobile-dropdown-link">For Children</a>
+                            <a href="For Teachers.html" class="mobile-dropdown-link">For Teachers</a>
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Games And Kit.html">Games And Kit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <h1 class="blog-heading" style="text-align: left; margin-left: 100px;">Blog</h1>
+            <div class="blog-items">
+                <div class="blog-item">
+                    <img src="sampal.png" alt="Blog Image 1">
+                    <div class="blog-item-name">Why Play-Based Learning Works: Real Results from My Sessions</div>
+                </div>
+                <div class="blog-item">
+                    <img src="sampal.png" alt="Blog Image 2">
+                    <div class="blog-item-name">Top 10 Must-Have Toys and Materials for Play-Based Sessions</div>
+                </div>
+                <div class="blog-item">
+                    <img src="sampal.png" alt="Blog Image 3">
+                    <div class="blog-item-name">A Day in the Life: What Happens in a Play-Based Learning Session?</div>
+                </div>
+                <div class="blog-item">
+                    <img src="sampal.png" alt="Blog Image 4">
+                    <div class="blog-item-name">From Messy to Magical: How Open-Ended Play Sparks Creativity</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <img src="https://i.ibb.co/yFdKjDZN/4.png" alt="Logo" style="width: 115px;">
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <p class="mb-1">Email: aditya@theplayedge.com</p>
+                    <p class="mb-0">+91 93732 07517</p>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <p class="mb-2 fw-bold">Follow Us</p>
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
+                        <a href="https://www.instagram.com/the_play_edge/" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
+                                style="width: 30px;">
+                        </a>
+                        <a href="https://wa.me/+919373207517" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp"
+                                style="width: 30px;">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook"
+                                style="width: 30px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="mb-0 small">2025 The Play Edge. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
