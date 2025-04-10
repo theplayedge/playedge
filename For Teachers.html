@@ -157,60 +157,13 @@
             position: relative;
         }
 
-        /* Custom Arrow Styles */
-        .custom-carousel-arrows {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-            z-index: 10;
-            transform: translateY(-50%);
-        }
-
-        .custom-carousel-arrow {
-            pointer-events: all;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 0 15px;
-            border: 1px solid rgba(127, 125, 125, 0.484);
-        }
-
-        .custom-carousel-arrow:hover {
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .custom-carousel-arrow i {
-            color: #333;
-            font-size: 1.5rem;
-        }
-
         /* Hide default carousel controls */
         .carousel-control-prev,
         .carousel-control-next {
             display: none !important;
         }
 
-        /* Program Carousel Specific Styles */
-        .program-carousel {
-            max-width: 85%;
-            margin: auto;
-            position: relative;
-        }
-
-        .program-carousel .carousel-inner {
-            border-radius: 0px;
-            overflow: hidden;
-        }
-
+        
         /* Smaller arrows for program carousel */
         .program-carousel .custom-carousel-arrow {
             width: 40px;
@@ -229,132 +182,15 @@
         }
 
         .content-section {
-            padding: 100px 0;
-            border-bottom: 1px solid #cdcdcd;
-        }
-
-        .section-img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section-img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .img-lg {
-            max-width: 500px;
-        }
-
-        .btn {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            padding: 0.5rem 1.2rem;
-            width: 20rem;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: none;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white !important;
-        }
-
-        .btn-primary:hover {
-            background-color: #e85a5b;
-        }
-
-        .btn-success {
-            background-color: var(--secondary-color);
-            color: white !important;
-        }
-
-        .btn-success:hover {
-            background-color: #6b9844;
-        }
-
-        .btn-info {
-            background-color: var(--accent-color);
-            color: white !important;
-        }
-
-        .btn-info:hover {
-            background-color: #167ebf;
-        }
-
-        .btn-danger {
-            background-color: var(--highlight-color);
-            color: white !important;
-        }
-
-        .btn-danger:hover {
-            background-color: #FFD200;
-        }
-
-        .workshop-item {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .workshop-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .gallery-container {
-            padding: 100px 0;
-            border-bottom: 1px solid #cdcdcd;
-        }
-
-        .gallery {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            padding: 20px 10px;
-            scroll-snap-type: x mandatory;
-        }
-
-        .gallery-item {
-            flex: 0 0 auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            width: 180px;
-            height: 220px;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            padding: 200px 0;
+            flex: 1;
         }
 
         footer {
             padding: 40px 0 30px;
             background: white;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: auto;
         }
 
         .mobile-dropdown-link {
@@ -605,14 +441,18 @@
         </div>
     </header>
 
-    <section class="content-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 text-center">
-                    <h1>COMING SOON  </h1>
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 text-center">
+                        <h1>COMING SOON</h1>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-3">
+        </section>
+    </main>
+
     <footer>
         <div class="container">
             <div class="row align-items-center">

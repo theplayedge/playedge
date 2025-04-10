@@ -157,165 +157,7 @@
             position: relative;
         }
 
-        /* Custom Arrow Styles */
-        .custom-carousel-arrows {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-            z-index: 10;
-            transform: translateY(-50%);
-        }
-
-        .custom-carousel-arrow {
-            pointer-events: all;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 0 15px;
-            border: 1px solid rgba(127, 125, 125, 0.484);
-        }
-
-        .custom-carousel-arrow:hover {
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .custom-carousel-arrow i {
-            color: #333;
-            font-size: 1.5rem;
-        }
-
-        /* Hide default carousel controls */
-        .carousel-control-prev,
-        .carousel-control-next {
-            display: none !important;
-        }
-
-        /* Program Carousel Specific Styles */
-        .program-carousel {
-            max-width: 85%;
-            margin: auto;
-            position: relative;
-        }
-
-        .program-carousel .carousel-inner {
-            border-radius: 0px;
-            overflow: hidden;
-        }
-
-        /* Smaller arrows for program carousel */
-        .program-carousel .custom-carousel-arrow {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(202, 202, 202, 0.1);
-        }
-
-        .program-carousel .custom-carousel-arrow:hover {
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .program-carousel .custom-carousel-arrow i {
-            color: #333;
-            font-size: 1.2rem;
-        }
-
-        .content-section {
-            padding: 100px 0;
-            border-bottom: 1px solid #cdcdcd;
-        }
-
-        .section-img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section-img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .img-lg {
-            max-width: 500px;
-        }
-
-        .btn {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            padding: 0.5rem 1.2rem;
-            width: 20rem;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: none;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white !important;
-        }
-
-        .btn-primary:hover {
-            background-color: #e85a5b;
-        }
-
-        .btn-success {
-            background-color: var(--secondary-color);
-            color: white !important;
-        }
-
-        .btn-success:hover {
-            background-color: #6b9844;
-        }
-
-        .btn-info {
-            background-color: var(--accent-color);
-            color: white !important;
-        }
-
-        .btn-info:hover {
-            background-color: #167ebf;
-        }
-
-        .btn-danger {
-            background-color: var(--highlight-color);
-            color: white !important;
-        }
-
-        .btn-danger:hover {
-            background-color: #FFD200;
-        }
-
-        .workshop-item {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .workshop-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
+        
         /* Gallery Styles */
         .gallery-container {
             padding: 100px 0;
@@ -329,6 +171,7 @@
         .gallery-title {
             text-align: center;
             margin-bottom: 50px;
+            margin-right: 81%;
             position: relative;
         }
 
@@ -342,7 +185,6 @@
             display: block;
             width: 80px;
             height: 4px;
-            background: var(--primary-color);
             margin: 15px auto;
         }
 
@@ -643,13 +485,11 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="For Children.html">For Children </a>
                             </li>
-                            <li><a class="dropdown-item" href="For Teachers.htm">For Teachers</a></li>
-                            
+                            <li><a class="dropdown-item" href="For Teachers.html">For Teachers</a></li>
                         </ul>
                         <div class="d-lg-none mobile-dropdown-links">
                             <a href="For Children.html" class="mobile-dropdown-link">For Children</a>
                             <a href="For Teachers.html" class="mobile-dropdown-link">For Teachers</a>
-                            
                         </div>
                     </li>
                     <li class="nav-item">
@@ -700,10 +540,11 @@
                     <div class="gallery-item">
                         <img src="sampal.png" alt="Playground">
                         <div class="gallery-caption">
-                            <h3>Childern Playing With</h3>
+                            <h3>Children Playing</h3>
                             <p>Developing motor skills through play</p>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -722,16 +563,13 @@
                     <p class="mb-2 fw-bold">Follow Us</p>
                     <div class="d-flex justify-content-center justify-content-md-end gap-3">
                         <a href="https://www.instagram.com/the_play_edge/" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"
-                                style="width: 30px;">
+                            <i class="bi bi-instagram" style="font-size: 1.5rem; color: #E1306C;"></i>
                         </a>
                         <a href="https://wa.me/+919373207517" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp"
-                                style="width: 30px;">
+                            <i class="bi bi-whatsapp" style="font-size: 1.5rem; color: #25D366;"></i>
                         </a>
                         <a href="#" target="_blank">
-                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook"
-                                style="width: 30px;">
+                            <i class="bi bi-facebook" style="font-size: 1.5rem; color: #1877F2;"></i>
                         </a>
                     </div>
                 </div>
