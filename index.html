@@ -56,8 +56,13 @@
         }
 
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         h1,
@@ -387,7 +392,43 @@
         .program-carousel h2 {
             margin-top: 20px;
         }
-        
+
+        /* WhatsApp floating button styles */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float img:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float img {
+                width: 50px;
+                height: 50px;
+            }
+        }
 
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
@@ -565,8 +606,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" id="aboutDropdown" data-bs-toggle="dropdown"
-                            role="button" aria-expanded="false">About Us</a>
+                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" id="aboutDropdown"
+                            data-bs-toggle="dropdown" role="button" aria-expanded="false">About Us</a>
                         <a class="nav-link d-lg-none" href="index.html">About Us</a>
                         <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
                             <li><a class="dropdown-item" href="Our Story.html">Our Story</a></li>
@@ -582,19 +623,19 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" id="programDropdown" data-bs-toggle="dropdown"
-                            role="button" aria-expanded="false">Program</a>
+                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" id="programDropdown"
+                            data-bs-toggle="dropdown" role="button" aria-expanded="false">Program</a>
                         <a class="nav-link d-lg-none" href="Program.html">Program</a>
                         <ul class="dropdown-menu" aria-labelledby="programDropdown">
                             <li><a class="dropdown-item" href="For Children.html">For Children </a>
                             </li>
                             <li><a class="dropdown-item" href="For Teachers.html">For Teachers</a></li>
-                            
+
                         </ul>
                         <div class="d-lg-none mobile-dropdown-links">
                             <a href="For Children.html" class="mobile-dropdown-link">For Children</a>
                             <a href="For Teachers.html" class="mobile-dropdown-link">For Teachers</a>
-                            
+
                         </div>
                     </li>
                     <li class="nav-item">
@@ -712,9 +753,9 @@
                     <p class="lead">Each of our programs is designed to ultimately help children develop critical
                         life-skills to thrive today and produce massive outcomes in the long term.</p>
                     <div class="btn-container d-flex flex-column gap-3">
-                        <a href="For Children.html" class="btn btn-primary btn-lg">Know more</a>          
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"  target="_blank"
-                            class="btn btn-success btn-lg">Start playing today!</a>
+                        <a href="For Children.html" class="btn btn-primary btn-lg">Know more</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSetXhCUaI3mIQoO1XrcQTlggKr18awv-gYTFGt_rkVEO6aoRQ/viewform"
+                            target="_blank" class="btn btn-success btn-lg">Start playing today!</a>
                     </div>
                 </div>
                 <div class="col-md-6 ps-lg-3 pe-lg-3 position-relative">
@@ -770,56 +811,67 @@
     </section>
 
     <!-- ===== CORE PRINCIPLES SECTION ===== -->
-<section class="content-section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 text-start mb-4"> 
-                <h1>OUR CORE PRINCIPLES OF PLAY</h1>
-            </div>
-        </div>
-
-        <div class="row mt-3">
-            <!-- Principle 1 -->
-            <div class="col-md-4 mb-3 mb-md-0 px-lg-4 px-3 position-relative">
-                <div class="text-center">
-                    <h4>Free Play</h4>
-                    <img src="Free Play.png" alt="Free Play Icon" class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                    <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #dee2e6;"></div>
-                    <p class="lead text-center" style="max-width: 290px; margin: 0 auto;">
-                        Free play allows participants to explore, experiment, and create freely with peers without rigid rules. It fosters creativity, problem-solving, and intrinsic motivation by letting players take the lead in their learning journey.
-                    </p>
-                </div>              
-                <div class="position-absolute end-0 top-0 h-100 d-none d-md-block" style="width: 1px; background-color: #dee2e6;"></div>
-            </div>
-
-            <!-- Principle 2 -->
-            <div class="col-md-4 mb-3 mb-md-0 px-lg-4 px-3 position-relative">
-                <div class="text-center">
-                    <h4>Guided Play</h4>
-                    <img src="https://i.ibb.co/BVwQJKR5/3-1-3.png" alt="Guided Play Icon" class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                    <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #dee2e6;"></div>
-                    <p class="lead text-center" style="max-width: 310px; margin: 0 auto;">
-                        Guided play blends freedom with structure, using prompts or challenges to steer learning while keeping it playful. Facilitators provide frameworks, guiding questions and challenges encouraging deeper thought and application through exploration and choice.
-                    </p>
-                </div>
-                <!-- Vertical line after second principle -->
-                <div class="position-absolute end-0 top-0 h-100 d-none d-md-block" style="width: 1px; background-color: #dee2e6;"></div>
-            </div>
-
-            <!-- Principle 3 -->
-            <div class="col-md-4 mb-3 mb-md-0 px-lg-4 px-3">
-                <div class="text-center">
-                    <h4>Custom Games</h4>
-                    <img src="https://i.ibb.co/cKNgHKs0/3-1-2.png" alt="Custom Games Icon" class="img-fluid mb-3" style="max-height: 130px; width: auto;">
-                    <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #dee2e6;"></div>
-                    <p class="lead text-center" style="max-width: 290px; margin: 0 auto;">
-                        Custom-designed games align with specific learning objectives, making complex topics engaging and interactive. Through purposeful game mechanics, players develop targeted skills in an immersive and enjoyable way.
-                    </p>
+    <section class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 text-start mb-4">
+                    <h1>OUR CORE PRINCIPLES OF PLAY</h1>
                 </div>
             </div>
+
+            <div class="row mt-3">
+                <!-- Principle 1 -->
+                <div class="col-md-4 mb-3 mb-md-0 px-lg-4 px-3 position-relative">
+                    <div class="text-center">
+                        <h4>Free Play</h4>
+                        <img src="Free Play.png" alt="Free Play Icon" class="img-fluid mb-3"
+                            style="max-height: 130px; width: auto;">
+                        <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #dee2e6;"></div>
+                        <p class="lead text-center" style="max-width: 290px; margin: 0 auto;">
+                            Free play allows participants to explore, experiment, and create freely with peers without
+                            rigid rules. It fosters creativity, problem-solving, and intrinsic motivation by letting
+                            players take the lead in their learning journey.
+                        </p>
+                    </div>
+                    <div class="position-absolute end-0 top-0 h-100 d-none d-md-block"
+                        style="width: 1px; background-color: #dee2e6;"></div>
+                </div>
+
+                <!-- Principle 2 -->
+                <div class="col-md-4 mb-3 mb-md-0 px-lg-4 px-3 position-relative">
+                    <div class="text-center">
+                        <h4>Guided Play</h4>
+                        <img src="https://i.ibb.co/BVwQJKR5/3-1-3.png" alt="Guided Play Icon" class="img-fluid mb-3"
+                            style="max-height: 130px; width: auto;">
+                        <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #dee2e6;"></div>
+                        <p class="lead text-center" style="max-width: 310px; margin: 0 auto;">
+                            Guided play blends freedom with structure, using prompts or challenges to steer learning
+                            while keeping it playful. Facilitators provide frameworks, guiding questions and challenges
+                            encouraging deeper thought and application through exploration and choice.
+                        </p>
+                    </div>
+                    <!-- Vertical line after second principle -->
+                    <div class="position-absolute end-0 top-0 h-100 d-none d-md-block"
+                        style="width: 1px; background-color: #dee2e6;"></div>
+                </div>
+
+                <!-- Principle 3 -->
+                <div class="col-md-4 mb-3 mb-md-0 px-lg-4 px-3">
+                    <div class="text-center">
+                        <h4>Custom Games</h4>
+                        <img src="https://i.ibb.co/cKNgHKs0/3-1-2.png" alt="Custom Games Icon" class="img-fluid mb-3"
+                            style="max-height: 130px; width: auto;">
+                        <div class="mb-3 mx-auto" style="height: 3px; width: 60px; background-color: #dee2e6;"></div>
+                        <p class="lead text-center" style="max-width: 290px; margin: 0 auto;">
+                            Custom-designed games align with specific learning objectives, making complex topics
+                            engaging and interactive. Through purposeful game mechanics, players develop targeted skills
+                            in an immersive and enjoyable way.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Upcoming Workshops Section -->
     <section class="workshops-section">
@@ -837,20 +889,22 @@
                     <p class="lead mb-3">We will have 2 workshops this month! 12 seats only, hurry up and register
                         yourself now</p>
 
-                        <div class="workshop-list mb-3">
-                            <div class="workshop-item mb-2">
-                                <a href="https://forms.gle/QVNe7LSXyybxkXB2A" target="_blank" class="text-decoration-none">
-                                    <h4 class="fw-bold" style="color: black;">Workshop 1: Architecture and sustainable cities</h4>
-                                </a>
-                            </div>
-                            <div class="workshop-item">
-                                <a href="https://forms.gle/QVNe7LSXyybxkXB2A" target="_blank" class="text-decoration-none">
-                                    <h4 class="fw-bold" style="color: black;">Workshop 2: Entrepreneurship and design thinking</h4>
-                                </a>
-                            </div>
+                    <div class="workshop-list mb-3">
+                        <div class="workshop-item mb-2">
+                            <a href="https://forms.gle/QVNe7LSXyybxkXB2A" target="_blank" class="text-decoration-none">
+                                <h4 class="fw-bold" style="color: black;">Workshop 1: Architecture and sustainable
+                                    cities</h4>
+                            </a>
                         </div>
-                    <div class="action-buttons d-flex flex-column gap-3">                      
-                        <a href="https://forms.gle/QVNe7LSXyybxkXB2A"target="_blank"
+                        <div class="workshop-item">
+                            <a href="https://forms.gle/QVNe7LSXyybxkXB2A" target="_blank" class="text-decoration-none">
+                                <h4 class="fw-bold" style="color: black;">Workshop 2: Entrepreneurship and design
+                                    thinking</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="action-buttons d-flex flex-column gap-3">
+                        <a href="https://forms.gle/QVNe7LSXyybxkXB2A" target="_blank"
                             class="btn btn-danger btn-lg">Register now!</a>
                     </div>
                 </div>
@@ -870,7 +924,8 @@
                     <p class="lead">We currently give these games as a part of our workshops, but if you would like a
                         copy for yourself please get in touch and we can find a way to deliver the games to you.</p>
                     <div class="btn-container">
-                        <a href="https://forms.gle/o55hwqgnzz59atUo9" target="_blank" class="btn btn-primary btn-lg">Pre-book Now</a>
+                        <a href="https://forms.gle/o55hwqgnzz59atUo9" target="_blank"
+                            class="btn btn-primary btn-lg">Pre-book Now</a>
                     </div>
                 </div>
                 <div class="col-md-6 ps-lg-3 pe-lg-3 position-relative">
@@ -885,8 +940,8 @@
                                 </p>
                             </div>
                             <div class="carousel-item" data-bs-interval="3000">
-                                <img src="Wealth Up (3) (1).png"
-                                    alt="Wealth Up game" style="border-radius: 12px; display: block; width: 100%;">
+                                <img src="Wealth Up (3) (1).png" alt="Wealth Up game"
+                                    style="border-radius: 12px; display: block; width: 100%;">
                                 <h2>2. Wealth Up</h2>
                                 <p class="lead">These are our financial literacy focused games and activities. It will
                                     help in understanding personal finance terms and developing key skills and mindsets
@@ -991,6 +1046,11 @@
         </div>
     </footer>
 
+    <div class="whatsapp-float">
+        <a href="https://wa.me/+919373207517" target="_blank" aria-label="WhatsApp">
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" style="width: 50px;">
+        </a>
+    </div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

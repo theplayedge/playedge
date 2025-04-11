@@ -163,7 +163,7 @@
             display: none !important;
         }
 
-        
+
         /* Smaller arrows for program carousel */
         .program-carousel .custom-carousel-arrow {
             width: 40px;
@@ -217,6 +217,43 @@
         /* Added spacing for carousel headings */
         .program-carousel h2 {
             margin-top: 20px;
+        }
+
+        /* WhatsApp floating button styles */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float img:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float img {
+                width: 50px;
+                height: 50px;
+            }
         }
 
         /* Mobile-specific adjustments */
@@ -372,7 +409,7 @@
 </head>
 
 <body>
-            
+
     <div class="marquee-container">
         <marquee class="marquee" direction="left">
             🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird
@@ -395,8 +432,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-none d-lg-block" id="aboutDropdown"
-                            role="button" aria-expanded="false">About Us</a>
+                        <a class="nav-link dropdown-toggle d-none d-lg-block" id="aboutDropdown" role="button"
+                            aria-expanded="false">About Us</a>
                         <a class="nav-link d-lg-none" href="index.html">About Us</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Our Story.html">Our Story</a></li>
@@ -412,19 +449,19 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-none d-lg-block" id="programDropdown"
-                            role="button" aria-expanded="false">Program</a>
+                        <a class="nav-link dropdown-toggle d-none d-lg-block" id="programDropdown" role="button"
+                            aria-expanded="false">Program</a>
                         <a class="nav-link d-lg-none" href="Program.html">Program</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="For Children.html">For Children </a>
                             </li>
                             <li><a class="dropdown-item" href="For Teachers.htm">For Teachers</a></li>
-                            
+
                         </ul>
                         <div class="d-lg-none mobile-dropdown-links">
                             <a href="For Children.html" class="mobile-dropdown-link">For Children</a>
                             <a href="For Teachers.html" class="mobile-dropdown-link">For Teachers</a>
-                            
+
                         </div>
                     </li>
                     <li class="nav-item">
@@ -488,7 +525,11 @@
             </div>
         </div>
     </footer>
-
+    <div class="whatsapp-float">
+        <a href="https://wa.me/+919373207517" target="_blank" aria-label="WhatsApp">
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" style="width: 50px;">
+        </a>
+    </div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

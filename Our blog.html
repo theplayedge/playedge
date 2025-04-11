@@ -427,6 +427,43 @@
             margin-top: 20px;
         }
 
+        /* WhatsApp floating button styles */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float img:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
         /* Mobile-specific adjustments */
         @media (max-width: 768px) {
             .navbar-brand img {
@@ -593,7 +630,7 @@
 </head>
 
 <body>
-            
+
     <div class="marquee-container">
         <marquee class="marquee" direction="left">
             🚀New workshops now open for registration.🚀 15 seats only! Hurry up, book your seats and get early bird
@@ -616,8 +653,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" id="aboutDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+                        <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" id="aboutDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
                         <a class="nav-link d-lg-none" href="index.html">About Us</a>
                         <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
                             <li><a class="dropdown-item" href="Our Story.html">Our Story</a></li>
@@ -660,29 +697,33 @@
     </header>
 
     <!-- Blog Section -->
-<section class="blog-section">
-    <div class="container">
-        <h1 class="blog-heading" style="text-align: left; margin-left: 100px;">Blog</h1>
-        <div class="blog-items">
-            <div class="blog-item" style="text-align: left;">
-                <img src="sampal.png" alt="Play-Based Learning Results">
-                <div class="blog-item-name" style="text-align: left;">Why Play-Based Learning Works: Real Results from My Sessions</div>
-            </div>
-            <div class="blog-item" style="text-align: left;">
-                <img src="sampal.png" alt="Top 10 Toys for Play-Based Learning">
-                <div class="blog-item-name" style="text-align: left;">Top 10 Must-Have Toys and Materials for Play-Based Sessions</div>
-            </div>
-            <div class="blog-item" style="text-align: left;">
-                <img src="sampal.png" alt="Day in Play-Based Learning Session">
-                <div class="blog-item-name" style="text-align: left;">A Day in the Life: What Happens in a Play-Based Learning Session?</div>
-            </div>
-            <div class="blog-item" style="text-align: left;">
-                <img src="sampal.png" alt="Open-Ended Play Creativity">
-                <div class="blog-item-name" style="text-align: left;">From Messy to Magical: How Open-Ended Play Sparks Creativity</div>
+    <section class="blog-section">
+        <div class="container">
+            <h1 class="blog-heading" style="text-align: left; margin-left: 100px;">Blog</h1>
+            <div class="blog-items">
+                <div class="blog-item" style="text-align: left;">
+                    <img src="sampal.png" alt="Play-Based Learning Results">
+                    <div class="blog-item-name" style="text-align: left;">Why Play-Based Learning Works: Real Results
+                        from My Sessions</div>
+                </div>
+                <div class="blog-item" style="text-align: left;">
+                    <img src="sampal.png" alt="Top 10 Toys for Play-Based Learning">
+                    <div class="blog-item-name" style="text-align: left;">Top 10 Must-Have Toys and Materials for
+                        Play-Based Sessions</div>
+                </div>
+                <div class="blog-item" style="text-align: left;">
+                    <img src="sampal.png" alt="Day in Play-Based Learning Session">
+                    <div class="blog-item-name" style="text-align: left;">A Day in the Life: What Happens in a
+                        Play-Based Learning Session?</div>
+                </div>
+                <div class="blog-item" style="text-align: left;">
+                    <img src="sampal.png" alt="Open-Ended Play Creativity">
+                    <div class="blog-item-name" style="text-align: left;">From Messy to Magical: How Open-Ended Play
+                        Sparks Creativity</div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer>
         <div class="container">
@@ -719,7 +760,11 @@
             </div>
         </div>
     </footer>
-
+    <div class="whatsapp-float">
+        <a href="https://wa.me/+919373207517" target="_blank" aria-label="WhatsApp">
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" style="width: 50px;">
+        </a>
+    </div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
